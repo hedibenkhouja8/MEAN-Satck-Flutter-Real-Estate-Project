@@ -6,6 +6,7 @@ import { ServicesComponent } from "./services/services.component";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { DescriptionComponent } from './buy/description/description.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,8 @@ const routes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'about', component: AboutComponent},
   {path: 'feedback', component: FeedbackComponent},
+  
+  {path: 'buy/description', component: DescriptionComponent},
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'buy', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },
