@@ -17,6 +17,7 @@ const routes: Routes = [
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'buy', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
   {path: '**', component: NotFoundComponent}
 
 ];
