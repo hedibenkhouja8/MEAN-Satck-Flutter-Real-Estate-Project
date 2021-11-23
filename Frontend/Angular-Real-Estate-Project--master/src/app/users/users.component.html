@@ -1,0 +1,36 @@
+<main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        
+          <h1 class="fw-light">Our Team</h1>
+          
+        
+      </div>
+    </section>
+ 
+    <div class="album py-2 bg-light">
+      <div class="container">
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" *ngFor="let user of usersList">
+                <!-- Card-->
+                <div class="card shadow-sm border-0 rounded">
+                  <div class="card-body p-0"><img [src]="user.image" alt="" class="w-100 card-img-top">
+                    <div class="p-4">
+                      <h5 class="mb-0">{{user.name}}</h5>
+                      <p class="small text-muted">{{user.location}}</p>
+                      <ul class="social mb-0 list-inline mt-3">
+                        
+                        <button routerLink="/users/{{user.id}}" type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-journal-richtext"></i></button>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      
+      </div>
+    </div>
+  
+  </main>
