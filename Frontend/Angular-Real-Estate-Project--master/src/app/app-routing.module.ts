@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'feedback', component: FeedbackComponent},
   
-  {path: 'buy/description', component: DescriptionComponent},
+  //{path: 'buy/description', component: DescriptionComponent},
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'buy', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },

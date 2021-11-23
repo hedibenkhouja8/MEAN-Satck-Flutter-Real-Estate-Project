@@ -8,8 +8,7 @@ import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
-    BuyComponent,
-    DescriptionComponent
+    BuyComponent
   ],
   imports: [
     CommonModule,

@@ -17,10 +17,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="property-details">
-                        <div class="img rounded" style="background-image: url(assets/images/work-1.jpg);"></div>
+                        <div class="img rounded" style="background-image: url({{buy?.image}});"></div>
                         <div class="text">
-                            <h2>Green Valey Home</h2>
-                            <span class="subheading">2854 Meadow View Drive, Hartford, USA</span>
+                            <h2>{{buy?.title}}</h2>
+                            <span class="subheading">{{buy?.location}}</span>
                         </div>
                     </div>
                 </div>
@@ -34,12 +34,7 @@
                                   <li class="nav-item">
                                     <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
                                   </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
-                                  </li>
+                                 
                                 </ul>
                               </div>
   
@@ -48,31 +43,19 @@
                                   <div class="row">
                                       <div class="col-md-4">
                                           <ul class="features">
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Lot Area: 1,250 SQ FT</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Bed Rooms: 4</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Bath Rooms: 4</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Luggage</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Garage: 2</li>
+                                              <li class="check"><span class="ion-ios-checkmark-circle">Owner:</span>{{buy?.owner}}</li>
+                                              <li class="check"><span class="ion-ios-checkmark-circle">Room number:</span>{{buy?.room_number}}</li>
+                                              <li class="check"><span class="ion-ios-checkmark-circle">Price:</span>{{buy?.price}}</li>
+                                              <li class="check"><span class="ion-ios-checkmark-circle">Size:</span>{{buy?.size}}Sqft</li>
+                                 
                                           </ul>
                                       </div>
-                                      <div class="col-md-4">
+                                      <div class="col-md-6">
                                           <ul class="features">
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Floor Area: 1,300 SQ FT</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Year Build:: 2019</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Water</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Stories: 2</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Roofing: New</li>
+                                              <li class="check"><span class="ion-ios-checkmark-circle">Description:</span>{{buy?.description}}</li>
                                           </ul>
                                       </div>
-                                      <div class="col-md-4">
-                                          <ul class="features">
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Floor Area: 1,300 SQ FT</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Year Build:: 2019</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Water</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Stories: 2</li>
-                                              <li class="check"><span class="ion-ios-checkmark-circle"></span>Roofing: New</li>
-                                          </ul>
-                                      </div>
+                                 
                                   </div>
                               </div>
   
