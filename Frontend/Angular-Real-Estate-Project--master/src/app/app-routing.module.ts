@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'buy', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
   { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
+  { path: 'rent', loadChildren: () => import('./rent/rent.module').then(m => m.RentModule) },
   {path: '**', component: NotFoundComponent}
 
 ];
