@@ -15,9 +15,7 @@ const routes: Routes = [
   {path: 'services', component: ServicesComponent},
   { path: 'rent', component: RentComponent},
   {path: 'feedback', component: FeedbackComponent},
-
   //{path: 'buy/description', component: DescriptionComponent},
-
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'buy', loadChildren: () => import('./buy/buy.module').then(m => m.BuyModule) },
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
@@ -35,7 +33,7 @@ const routes: Routes = [
     ContactusComponent,
     ServicesComponent,
     NotFoundComponent,
-    FeedbackComponent
+    FeedbackComponent,
   ]
 })
 export class AppRoutingModule { }
