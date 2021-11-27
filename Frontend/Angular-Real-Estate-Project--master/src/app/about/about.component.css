@@ -517,7 +517,7 @@
   .user-img {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+   }
   
   .testimony-section {
   position: relative; }
@@ -690,3 +690,61 @@
   .form-group {
   margin-bottom: 1rem; }
   
+
+  .ftco-section-parallax {
+    position: relative; }
+    .ftco-section-parallax .heading-section-white h2 {
+      font-weight: 400 !important; }
+      
+.heading-section .subheading {
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 0;
+    color: #d4ca68;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative; }
+    .heading-section .subheading:after {
+      position: absolute;
+      top: 50%;
+      left: -60px;
+      content: '';
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 50px;
+      height: 1px;
+      margin-top: -1px;
+      background: #d4ca68; }
+    .heading-section .subheading:before {
+      position: absolute;
+      top: 50%;
+      right: -60px;
+      content: '';
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 50px;
+      height: 1px;
+      margin-top: -1px;
+      background: #d4ca68; }
+  
+  .heading-section h2 {
+    font-size: 40px;
+    font-weight: 600; }
+    @media (max-width: 767.98px) {
+      .heading-section h2 {
+        font-size: 28px; } }
+  
+  .heading-section.heading-section-white .subheading {
+    color: rgba(255, 255, 255, 0.9); }
+  
+  .heading-section.heading-section-white h2 {
+    font-size: 40px;
+    color: #fff; }
+  
+  .heading-section.heading-section-white p {
+    color: rgba(255, 255, 255, 0.9); }
+    
