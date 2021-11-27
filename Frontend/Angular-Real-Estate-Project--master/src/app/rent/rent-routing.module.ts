@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { RentComponent } from './rent.component';
 import { RentDetailsComponent } from './rent-details/rent-details.component';
 
-const routes: Routes = [{ path: '', component: RentComponent }];
+const routes: Routes = [
+  { path: '', component: RentComponent },
+{ path: 'rent-details', component: RentDetailsComponent }];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
