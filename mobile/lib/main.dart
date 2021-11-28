@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/widget/navigation_drawer_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,16 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'project flutter',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.deepPurple,
+        primaryColor: Colors.black,
       ),
       home: const MyHomePage(title: 'project'),
     );
@@ -49,6 +41,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+
   var text;
   var $ind;
   var _displayed = 'home';
@@ -56,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
+      drawer:NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text('project'),
         backgroundColor: Colors.blue,
@@ -68,7 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('$_displayed', style: TextStyle(fontSize: 40))])),
+              children: [Text('$_displayed', style: TextStyle(fontSize: 40))])
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -89,15 +85,15 @@ class _MyHomePageState extends State<MyHomePage> {
   void _display(int index) {
     setState(() {
       switch (index) {
-        case 1:
+        case 0:
           _displayed = 'home';
           $_currentindex = 0;
           break;
-        case 2:
+        case 1:
           _displayed = 'contact us';
           $_currentindex = 1;
           break;
-        case 3:
+        case 2:
           _displayed = 'about ';
           $_currentindex = 2;
           break;
