@@ -53,6 +53,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
+                    text: 'Rent',
+                    icon: Icons.monetization_on_outlined,
+                    onClicked: () => selectedItem(context, 3),
+                  ),
+                  const SizedBox(height: 24),
+                  buildMenuItem(
                     text: 'Services',
                     icon: Icons.paste_sharp,
                     onClicked: () => selectedItem(context, 1),
