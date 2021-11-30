@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/page/favourites_page.dart';
+import 'package:mobile/page/Servives_page.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/profile_page.dart';
+import 'package:mobile/page/rent_page.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -22,7 +23,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               name: name,
               email: email,
               onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfilePage(),//sefsdfsfsfddddddddddddddd
+                builder: (context) => ProfilePage(),
               )),
             ),
             Container(
@@ -36,32 +37,32 @@ class NavigationDrawerWidget extends StatelessWidget {
                   buildMenuItem(
                     text: 'Profile',
                     icon: Icons.account_circle,
-                    onClicked: () => {},
+                    onClicked: () => {selectedItem(context, 0)},
                   ),
                   const SizedBox(height: 16),
                   Divider(color: Colors.white70),
                   buildMenuItem(
                     text: 'Home',
                     icon: Icons.home,
-                    onClicked: () => selectedItem(context, 2),
+                    onClicked: () => {},
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Buy',
                     icon: Icons.monetization_on_outlined,
-                    onClicked: () => selectedItem(context, 0),
+                    onClicked: () => selectedItem(context, 1),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Rent',
                     icon: Icons.monetization_on_outlined,
-                    onClicked: () => selectedItem(context, 3),
+                    onClicked: () => selectedItem(context,2),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Services',
                     icon: Icons.paste_sharp,
-                    onClicked: () => selectedItem(context, 1),
+                    onClicked: () => selectedItem(context,3 ),
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
@@ -178,12 +179,22 @@ class NavigationDrawerWidget extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => PeoplePage(),
+          builder: (context) => ProfilePage(),
         ));
         break;
       case 1:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => FavouritesPage(),
+          builder: (context) => Buy(),
+        ));
+        break;
+      case 2:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => RentPage(),
+        ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => Servives(),
         ));
         break;
     }
