@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { buys } from 'src/app/buy-list';
 import { Buy } from 'src/app/buy.model';
-
+import { FavService } from 'src/app/services/fav.service';
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
@@ -10,7 +10,7 @@ import { Buy } from 'src/app/buy.model';
 })
 export class DescriptionComponent implements OnInit {
 public buy?:Buy;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,   private favService: FavService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -18,5 +18,7 @@ public buy?:Buy;
       this.buy = buys.filter(buy => buy.id === buyId)[0];
     });
   }
+  public addTofav():void {
+    this.favService.add(this.buy?.id);  }
 
 }
