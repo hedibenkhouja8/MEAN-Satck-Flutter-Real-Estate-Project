@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { buys } from '../buy-list';
 import { Buy } from '../buy.model';
-
+import { LocalStorageService } from "src/app/services/local-storage.service";
+import { FavService } from 'src/app/services/fav.service';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -9,9 +10,14 @@ import { Buy } from '../buy.model';
 })
 export class BuyComponent implements OnInit {
   public buyList: Buy[] = buys;
-  constructor() { }
+  public favContent: any[]= [];
+  constructor(private favService: FavService ) { }
 
   ngOnInit(): void {
+    
+    //this.favContent = this.localStorageService.get('fav');
   }
-
+  public addTofav(id: string):void {
+    this.favService.add(id);
+}
 }
