@@ -20,14 +20,14 @@ export class FavService {
   add(productID?: string) {
  
     if(!this.favContent.filter((elem: Buy) => elem.id === productID)[0]) {
-      this.favContent.push({id: productID, quantity: 1})
+      this.favContent.push({id: productID})
     }
 
-    this.localStorageService.set('fav', this.favContent);
+    this.localStorageService.set('fav-buy', this.favContent);
   }
 
   load() {
-    return this.localStorageService.get('fav')
+    return this.localStorageService.get('fav-buy')
   }
 
 

@@ -44,6 +44,8 @@
                 <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description"
                   role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
               </li>
+              <button type="button" title="add to fav" (click)="addTofav()" class="btn btn-sm btn-outline-secondary"><i class="bi bi-heart"></i></button>
+                 
             </ul>
           </div>
 
@@ -80,7 +82,7 @@
                       <span class="ion-ios-checkmark-circle">Description:</span>{{ rent?.description }}
                     </li>
                   </ul>
-                </div>
+                   </div>
               </div>
             </div>
 

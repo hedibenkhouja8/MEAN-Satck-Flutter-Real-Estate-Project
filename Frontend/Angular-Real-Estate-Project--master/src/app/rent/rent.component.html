@@ -37,7 +37,12 @@
               </div>
             </div>
           </div>
+          
           <div class="text">
+            		
+						<button type="button" (click)="addTofav(rent.id)" title="Add To Fav"  id ="heart" class="btn btn-sm btn-outline-secondary"><i id="like"  class="bi bi-heart"></i></button>
+						
+					
             <p class="price mb-3"><span class="orig-price">{{ rent.price_per_month|currency:'EUR'  }}/Month</span></p>
             <p class="price mb-3"><span class="orig-price">{{ rent.start_date_available|date: "longDate"  }} - {{ rent.end_date_available|date: "longDate"  }} </span></p>
             <h3 class="mb-0"><a routerLink="">{{ rent.owner }}</a></h3>

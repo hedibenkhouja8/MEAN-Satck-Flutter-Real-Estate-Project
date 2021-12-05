@@ -34,7 +34,8 @@
                                   <li class="nav-item">
                                     <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
                                   </li>
-                                 
+                                  <button  type="button" title="add to fav" (click)="addTofav()" class="btn btn-sm btn-outline-secondary"><i class="bi bi-heart"></i></button>
+    
                                 </ul>
                               </div>
   
@@ -49,8 +50,7 @@
                                               <li class="check"><span class="ion-ios-checkmark-circle">Size:</span>{{buy?.size}}Sqft</li>
                                  
                                           </ul>
-      <button  type="button" title="add to fav" (click)="addTofav()" class="btn btn-sm btn-outline-secondary"><i class="bi bi-heart"></i></button>
-    
+   
                                       </div>
                                       <div class="col-md-6">
                                           <ul class="features">

@@ -18,5 +18,6 @@ export class LocalStorageService {
   clear(itemName: string) {
     localStorage.removeItem(itemName);
   }
+  
 
 }
