@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FavService } from "src/app/services/fav.service";
 import { buys } from "src/app/buy-list";
+import { BuyModule } from 'src/app/buy/buy.module';
+import { CommonModule } from '@angular/common';  
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'
 
 
@@ -9,6 +12,8 @@ import { BrowserModule } from '@angular/platform-browser'
   templateUrl: './favourites-buy.component.html',
   styleUrls: ['./favourites-buy.component.css']
 })
+
+
 export class FavouritesBuyComponent implements OnInit {
 
   public favContent: any = [];
@@ -17,6 +22,8 @@ export class FavouritesBuyComponent implements OnInit {
   ngOnInit(): void {
     this.getfavDetails();
     console.log(this.favContent);
+    
+  imports: [ CommonModule,BuyModule,FavService ]
   }
   getfavDetails() {
     this.favContent = this.favService.favContent;
@@ -25,8 +32,11 @@ export class FavouritesBuyComponent implements OnInit {
      this.favContent[index].title = buy.title;
       this.favContent[index].location = buy.location;
       this.favContent[index].image = buy.image;
-
-
 }
   }
+  
+clearFavourites() {
+  this.favService.clear();
+  this.ngOnInit();
+}
 }

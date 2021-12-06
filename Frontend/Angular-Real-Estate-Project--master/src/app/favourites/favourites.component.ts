@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-favourites',

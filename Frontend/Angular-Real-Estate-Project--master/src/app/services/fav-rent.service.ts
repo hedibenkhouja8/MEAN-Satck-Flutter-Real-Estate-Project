@@ -30,6 +30,11 @@ export class FavRentService {
 
     this.localStorageService.clear('fav-rent');
   }
+  
+  clear() {
+    this.favContent = [];
+    this.localStorageService.set('fav-rent', this.favContent);
+  }
 /*  remove2(productID?: string) {
  
     var items = localStorage["fav-rent"];

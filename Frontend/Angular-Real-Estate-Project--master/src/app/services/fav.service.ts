@@ -30,7 +30,11 @@ export class FavService {
     return this.localStorageService.get('fav-buy')
   }
 
-
+  clear() {
+   
+    this.favContent = [];
+    this.localStorageService.set('fav-buy', this.favContent);
+  }
   // public get() {
   //   return this.cartContent;
   // }
