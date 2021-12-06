@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
   { path: 'rent', loadChildren: () => import('./rent/rent.module').then(m => m.RentModule) },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+  { path: 'favourites', loadChildren: () => import('./favourites/favourites.module').then(m => m.FavouritesModule) },
   {path: '**', component: NotFoundComponent}
 
 ];
