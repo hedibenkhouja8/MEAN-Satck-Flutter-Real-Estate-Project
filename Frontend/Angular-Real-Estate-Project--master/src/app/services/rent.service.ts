@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RentService {
   private apiUrl ='http://localhost:3000/rents';
+  //private apiUrl='https://my-json-server.typicode.com/edibenkhouja8/MEAN-Stack-Flutter-Real-Estate-Project/rents';
 
 
   constructor(private http: HttpClient) {}
@@ -22,7 +23,7 @@ export class RentService {
    * @param id : rent id
    * @returns Observable<Rent>
    */
-  get(id: string) {
+  get(id?: string) {
     return this.http.get(this.apiUrl + '/' + id);
   }
 
