@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RentComponent } from './rent.component';
+import { CommonModule } from '@angular/common';
 import { RentDetailsComponent } from './rent-details/rent-details.component';
 
 const routes: Routes = [
@@ -9,7 +10,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),CommonModule],
   exports: [RouterModule],
   declarations: [
     RentDetailsComponent
