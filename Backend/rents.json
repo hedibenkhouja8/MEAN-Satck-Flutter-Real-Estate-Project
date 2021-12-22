@@ -10,8 +10,8 @@
             "room_number": 5,
             "location": "bizerte",
             "price_per_month": "100.99",
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "21/10/2021",
+            "end_date_available": "21/12/2021"
         },
         {
             "id": "2",
@@ -23,8 +23,8 @@
             "room_number": 4,
             "location": "bizerte",
             "price_per_month": 50.99,
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "21/06/2021",
+            "end_date_available": "21/03/2021"
         },
         {
             "id": "3",
@@ -36,8 +36,8 @@
             "room_number": 6,
             "location": "bizerte",
             "price_per_month": 150.99,
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "30/12/2021",
+            "end_date_available": "05/01/2022"
         },
         {
             "id": "4",
@@ -49,8 +49,8 @@
             "room_number": 5,
             "location": "bizerte",
             "price_per_month": 45.99,
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "15/06/2021",
+            "end_date_available": "21/09/2021"
         },
         {
             "id": "5",
@@ -62,8 +62,8 @@
             "room_number": 5,
             "location": "bizerte",
             "price_per_month": 100.95,
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "07/01/2022",
+            "end_date_available": "14/03/2022"
         },
         {
             "id": "6",
@@ -75,8 +75,8 @@
             "room_number": 5,
             "location": "bizerte",
             "price_per_month": 120.1,
-            "start_date_available": "10/2020",
-            "end_date_available": "10/2020"
+            "start_date_available": "21/12/2021",
+            "end_date_available": "21/01/2022"
         }
     ]
 }
