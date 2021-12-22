@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RentService {
   //private apiUrl ='http://localhost:3000/rents';
-  private apiUrl='https://my-json-server.typicode.com/edibenkhouja8/MEAN-Stack-Flutter-Real-Estate-Project/rents';
+  private apiUrl='https://my-json-server.typicode.com/labidimalek/public-rents-api/rents';
 
 
   constructor(private http: HttpClient) {}
