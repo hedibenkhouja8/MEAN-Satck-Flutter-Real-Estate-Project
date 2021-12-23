@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyComponent } from './buy.component';
 import { DescriptionComponent } from './description/description.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [{ path: '', component: BuyComponent }
 ,
@@ -10,7 +11,7 @@ const routes: Routes = [{ path: '', component: BuyComponent }
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),CommonModule],
   exports: [RouterModule],
   declarations: [
     DescriptionComponent
