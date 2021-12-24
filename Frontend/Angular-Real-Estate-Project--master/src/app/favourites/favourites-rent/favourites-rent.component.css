@@ -103,3 +103,20 @@ label.radio input:checked+span {
 .spec {
     font-size: 11px
 }
+
+#ti{
+    width: 60%;
+       
+    margin-bottom: 3cm; 
+}
+#ti2{
+    margin-top: 8cm;
+}
+.favlocation{
+    margin-top: 2cm;
+
+}
+.favowner{
+    margin-top: 2cm;
+
+}
