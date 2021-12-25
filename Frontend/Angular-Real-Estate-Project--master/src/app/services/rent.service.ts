@@ -29,7 +29,7 @@ export class RentService {
 
   /**
    * Create a new rent
-   * @param course new rent to create
+   * @param rent new rent to create
    */
   create(rent: any) {
     return this.http.post(this.apiUrl, rent);
