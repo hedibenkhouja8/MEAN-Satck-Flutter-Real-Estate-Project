@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 
 const buySchema = new mongoose.Schema({
-  title: {type: string, required: true},
+  title: {type: String, required: true},
   
-  owner: {type: string, required: true},
-  description: {type: string, required: true},
-  image: {type: string, required: true},
+  owner: {type: String, required: true},
+  description: {type: String, required: true},
+  image: {type: String, required: true},
   
-  size: {type: number, required: true},
+  size: {type: Number, required: true},
   
-  room_number: {type: number, required: true},
-  location: {type: string, required: true},
-  price: {type: number, required: true}
+  room_number: {type: Number, required: true},
+  location: {type: String, required: true},
+  price: {type: Number, required: true},
+  
+  user_id: {type: String, required: true}
 });
 
 module.exports = mongoose.model('Buy', buySchema);
