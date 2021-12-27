@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BuyService {
-  private apiUrl='https://my-json-server.typicode.com/hedibenkhouja8/dbjson/buys';
+  private apiUrl='http://localhost:3000/api/buys';
 
 constructor(private http: HttpClient) {}
 /**
