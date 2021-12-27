@@ -10,7 +10,8 @@ export class AboutService {
   constructor(private http: HttpClient) { }
 
  // private apiUrl='http://localhost:3000/abouts'
- private apiUrl='https://my-json-server.typicode.com/yousseff650/public-about-api/abouts'
+ //private apiUrl='https://my-json-server.typicode.com/yousseff650/public-about-api/abouts'
+ private apiUrl ='http://localhost:3000/api/abouts';
  /**
   * Get all Agencys About
   * @returns Observable<About[]>

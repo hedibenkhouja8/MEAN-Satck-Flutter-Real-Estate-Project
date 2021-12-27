@@ -27,9 +27,9 @@
     <div class="row justify-content-center">
       <div class="col-md-12">
         <div class="property-details">
-          <div class="img rounded" style="background-image: url({{agency?.image}});"></div>
+          <div class="img rounded" style="background-image: url({{about?.image_location}});"></div>
           <div class="text">
-            <span class="subheading">{{ agency?.location }}</span>
+            <span class="subheading">{{ about?.location }}</span>
           </div>
         </div>
       </div>
@@ -50,25 +50,54 @@
             <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
               aria-labelledby="pills-description-tab">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                   <ul class="features">
                     <li class="check">
-                      <span class="ion-ios-checkmark-circle">Owner:</span>{{ agency?.owner }}
+                      <span class="ion-ios-checkmark-circle">Owner:</span>
+                      <div class="col-lg-5 col-xs-6" id="picturebox">
+
+                        <img src="{{about?.image_owner}}" alt="profile pic" height="150%" width="150%" style="border-radius: 56px; margin-left: 11px;margin-top: 20px;"/>
+                          </div>
+                      
+                      <P style="margin: 16px;">{{ about?.owner }}</P>
+                    </li>
+                  
+                   
+                    <li class="check">
+                      <span class="ion-ios-checkmark-circle">Email:</span>
+                      {{ about?.mail }}
+                    </li>
+                    <li class="check">
+                      <span class="ion-ios-checkmark-circle">Phone:</span>
+                      {{ about?.phone }}
+                    </li>
+                    
+                  </ul>
+                </div>
+                <div class="col-md-2">
+                  <ul class="features">
+                    <li class="check">
+                      <span class="ion-ios-checkmark-circle">Siege Social:</span>
+                      <p> {{ about?.siege_social }}</p>
                     </li>
                   
                    
                     <li class="check">
                       <span class="ion-ios-checkmark-circle">Creation Date :</span>
-                      {{ agency?.date_creation }}
+                      {{ about?.date_creation }}
                     </li>
-                    
+                    <li class="check">
+                      <span class="ion-ios-checkmark-circle">Horaire :</span>
+                     <br> {{ about?.horaire }}
+                    </li>
                     
                   </ul>
                 </div>
                 <div class="col-md-6">
                   <ul class="features">
                     <li class="check">
-                      <span class="ion-ios-checkmark-circle">Description:</span>{{ agency?.description }}
+                      <span class="ion-ios-checkmark-circle">Description:</span>
+                      {{ about?.description }}
                     </li>
                   </ul>
                 </div>

@@ -4,7 +4,7 @@ const app = express();
 
 const buyRouter = require('./routes/buys');
 const rentRouter = require('./routes/rents');
-
+ const aboutRouter = require('./routes/abouts');
 mongoose.connect('mongodb://localhost:27017/real_estate',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
@@ -22,5 +22,5 @@ app.use((req, res, next) => {
 
   app.use('/api/buys', buyRouter);
   app.use('/api/rents', rentRouter);
-
+  app.use('/api/abouts',aboutRouter);
 module.exports = app;
