@@ -20,7 +20,7 @@ export class FavRentService {
   add(productID?: string) {
 
     if(!this.favContent.filter((elem: Rent) => elem.id === productID)[0]) {
-      this.favContent.push({_id: productID})
+      this.favContent.push({id: productID})
     }
 
     this.localStorageService.set('fav-rent', this.favContent);
