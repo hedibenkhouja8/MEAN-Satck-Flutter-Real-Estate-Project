@@ -5,8 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class RentService {
-  //private apiUrl ='http://localhost:3000/rents';
-  private apiUrl='https://my-json-server.typicode.com/labidimalek/public-rents-api/rents';
+  //private apiUrl ='http://localhost:3000/rents'; //json url
+  //private apiUrl='https://my-json-server.typicode.com/labidimalek/public-rents-api/rents';
+  private apiUrl ='http://localhost:3000/api/rents';
 
 
   constructor(private http: HttpClient) {}
