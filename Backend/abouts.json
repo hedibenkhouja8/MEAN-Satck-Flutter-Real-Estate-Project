@@ -15,7 +15,7 @@
     },
     {
       "id": "2",
-      "name": "youssef farhat",
+      "owner": "youssef farhat",
       "mail": "youssef@gmail.com",
       "phone": "+21655387849",
       "image_owner": "assets/images/youssef.jpg", 
@@ -29,7 +29,7 @@
     },
     {
       "id": "3",
-      "name": "melek labidi",
+      "owner": "melek labidi",
       "mail": "melek@gmail.com",
       "phone": "+21621436587",
       "image_owner": "assets/images/melek.jpg", 
