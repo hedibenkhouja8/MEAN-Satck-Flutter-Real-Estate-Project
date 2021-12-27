@@ -3,51 +3,51 @@
 
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
-        
-          <h1 class="fw-light">Buy favourites </h1>
-        
-          <div class="container ">    
+
+          <h1 class="fw-light">Rent favourites </h1>
+
+          <div class="container ">
             <div class="product-details mr-2"><button class="btn btn-outline-danger" (click)="clearFavourites()"> delete all </button>
          <hr>
          <div class="d-flex justify-content-between"><span> items in your list : </span>
-            
+
          </div>
          <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded" *ngFor="let fav of favContent;index as i">
              <div class="d-flex flex-row"><img class="rounded" src={{fav.image}} width="250">
              <br>
              </div>
              <div class="favowner">
-               <h6  > <i class="bi bi-person"></i>{{ fav.owner}}  </h6> 
-               
+               <h6  > <i class="bi bi-person"></i>{{ fav.owner}}  </h6>
+
              </div>
              <h5 class="card-title" id="ti"><span  >{{ fav.title }}</span> </h5>
              <div class="d-flex flex-row">
-                
+
              <div class="favlocation">
-               <h6  > <i class="bi bi-geo-alt"></i>{{ fav.location}}  </h6> 
-               
+               <h6  > <i class="bi bi-geo-alt"></i>{{ fav.location}}  </h6>
+
              </div>
 
-            
+
                </div>
-              
-             
-            
-             
+
+
+
+
          </div>
-        
+
      </div>
   </div>
     </div>
-        
-            
-          
-        
-      
+
+
+
+
+
     </section>
- 
-     
-           
-    
-  
+
+
+
+
+
   </main>

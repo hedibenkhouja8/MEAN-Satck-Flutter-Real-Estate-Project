@@ -8,7 +8,7 @@ import { Rent } from "src/app/rent.model";
 })
 export class FavRentService {
 
- 
+
   public favContent: any = [];
 
   constructor(
@@ -18,25 +18,25 @@ export class FavRentService {
   }
 
   add(productID?: string) {
- 
+
     if(!this.favContent.filter((elem: Rent) => elem.id === productID)[0]) {
-      this.favContent.push({id: productID})
+      this.favContent.push({_id: productID})
     }
 
     this.localStorageService.set('fav-rent', this.favContent);
   }
   remove(productID?: string) {
- 
+
 
     this.localStorageService.clear('fav-rent');
   }
-  
+
   clear() {
     this.favContent = [];
     this.localStorageService.set('fav-rent', this.favContent);
   }
 /*  remove2(productID?: string) {
- 
+
     var items = localStorage["fav-rent"];
     for (var i =0; i< items.length; i++) {
         var item = JSON.parse(items[i]);
@@ -45,7 +45,7 @@ export class FavRentService {
             break;
         }
     }
-    
+
     // Don't forget to store the result back in localStorage
     localStorage.setItem("fav-rent", items)
   }*/
