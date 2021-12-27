@@ -4,22 +4,37 @@ import { buys } from 'src/app/buy-list';
 import { Buy } from 'src/app/buy.model';
 import { FavService } from 'src/app/services/fav.service';
 import { BuyService } from 'src/app/services/buy.service';
+
 @Component({
   selector: 'app-description',
   templateUrl: './description.component.html',
   styleUrls: ['./description.component.css']
 })
-export class DescriptionComponent implements OnInit {
-public buy?:Buy;
+export class DescriptionComponent implements OnInit { 
+   id = this.route.snapshot.params['id'];
+   list: any;
+   buy = {
+     title: '',
+     owner: '',
+     description: '',
+     image: '',
+     size: 0,
+     room_number: 0,
+     location: '',
+     price: 0
+   };
   constructor(private route: ActivatedRoute,   private favService: FavService,private buyService: BuyService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const buyId = params.get("id");
-      this.buy = buys.filter(buy => buy.id === buyId)[0];
+      this.buyService.get(this.id).subscribe((data) => {
+        this.list = data;
+        this.buy = this.list;
     });
+    /*this.buyService.get(this.id).subscribe(
+      res => this.buyList = res
+    );*/
   }
   public addTofav():void {
-    this.favService.add(this.buy?.id);  }
+    this.favService.add(this.id);  }
 
 }
