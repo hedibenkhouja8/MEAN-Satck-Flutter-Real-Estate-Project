@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FavRentService } from 'src/app/services/fav-rent.service';
-//import { rents } from "src/app/rent-list";
-import { RentService } from 'src/app/services/rent.service';
+import { rents } from "src/app/rent-list";
 import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-favourites-rent',
@@ -10,10 +9,10 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class FavouritesRentComponent implements OnInit {
   public favContent: any = [];
-  public rents: any = [];
+
   constructor(
     private favRentService: FavRentService,
-    private rentService: RentService
+
   ) {}
 
   ngOnInit(): void {
@@ -22,11 +21,8 @@ export class FavouritesRentComponent implements OnInit {
   }
   getfavDetails() {
     this.favContent = this.favRentService.favContent;
-    this.rentService.all().subscribe((res) => (this.rents = res));
     for (let index = 0; index < this.favContent.length; index++) {
-      const rent = this.rents.filter(
-        (rent: any) => rent._id == this.favContent[index]._id
-      )[0];
+      const rent = rents.filter((rent: any) => rent.id == this.favContent[index].id)[0];
       this.favContent[index].title = rent.title;
       this.favContent[index].location = rent.location;
       this.favContent[index].image = rent.image;
