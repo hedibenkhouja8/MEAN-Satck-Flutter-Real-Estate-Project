@@ -3,6 +3,7 @@ import 'package:mobile/page/Servives_page.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/profile_page.dart';
 import 'package:mobile/page/rent_page.dart';
+import 'package:mobile/auth/index.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -51,6 +52,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                     text: 'Buy',
                     icon: Icons.monetization_on_outlined,
                     onClicked: () => selectedItem(context, 1),
+                  ),
+                  const SizedBox(height: 24),
+                  buildMenuItem(
+                    text: 'index',
+                    icon: Icons.monetization_on_outlined,
+                    onClicked: () => selectedItem(context, 7),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
@@ -195,6 +202,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => Servives(),
+        ));
+        break;
+      case 7:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const IndexPage(),
         ));
         break;
     }
