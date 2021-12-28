@@ -10,6 +10,8 @@ class NumbersWidget extends StatelessWidget {
       buildButton(context, '12', 'Buy'),
       buildDivider(),
       buildButton(context, '3', 'FeedBack'),
+      buildDivider(),
+      buildButton(context, '7', 'Index'),
     ],
   );
   Widget buildDivider() => Container(

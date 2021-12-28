@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/auth/sign_in.dart';
+import 'package:mobile/auth/sign_up.dart';
 import 'package:mobile/widget/navigation_drawer_widget.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +23,12 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.black,
       ),
       home: const MyHomePage(title: 'project'),
+
+      routes: {
+
+        '/signup': (BuildContext context)=>const SignUpPage(),
+        '/signin': (BuildContext context)=>const SignInPage(),
+      },
     );
   }
 }
