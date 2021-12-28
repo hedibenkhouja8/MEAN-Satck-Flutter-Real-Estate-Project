@@ -1,37 +1,78 @@
 import 'package:flutter/material.dart';
 
 import 'package:mobile/model/buy.dart';
-import 'package:mobile/model/rent.dart';
 import 'package:mobile/utils/buy_list.dart';
-import 'package:mobile/utils/rent_list.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 class BuyPage extends StatefulWidget {
+    const BuyPage({Key? key}) : super(key: key);
   @override
   _BuyPageState createState() => _BuyPageState();
 }
 class _BuyPageState extends State<BuyPage>  {
+  final String url =
+     'https://my-json-server.typicode.com/hedibenkhouja8/dbjson/buys';
+  List<dynamic> _buys = [];
+  bool loading = true;
 
+  @override
+  void initState() {
+    getBuys();
+    super.initState();
+  }
+
+  Future<void> getBuys() async {
+    var response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      final parsedData = jsonDecode(response.body).cast<Map<String, dynamic>>();
+      _buys = parsedData.map<Buy>((json) => Buy.fromJson(json)).toList();
+      setState(() {
+        loading = !loading;
+      });
+    } else {
+      throw Exception('Failed to load buys');
+    }
+  }
 
   @override
   Widget build(BuildContext context) => Scaffold(
     //drawer: NavigationDrawerWidget(),
-    appBar: AppBar(
-      title: Text('Buy'),
-      centerTitle: true,
-      backgroundColor: Colors.amberAccent,
-    ),
-     body: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-        itemCount: buys.length,
+         //drawer: NavigationDrawerWidget(),
+      appBar: AppBar(
+        title: const Text('Buy'),
+        centerTitle: true,
+        backgroundColor: Colors.pink,
+      ),
+      body: loading ? waitingScreen() : buysList());
+
+  Widget waitingScreen() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const <Widget>[
+          Text("Loading data ..."),
+          Padding(padding: EdgeInsets.only(bottom: 25)),
+          CircularProgressIndicator()
+        ],
+      ),
+    );
+  }
+
+  Widget buysList() {
+    return GridView.builder(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: _buys.length,
         itemBuilder: (context, index) {
-          Buy buy = buys[index];
+          Buy buy = _buys[index];
           return Card(
            // color: Colors.pinkAccent,
             child: Container(
               padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Expanded(child: buy.image),
+                children: <Widget>[     
+                               Expanded(child: Image.asset(buy.image)),
                   const Divider(color: Colors.grey),
                   ListTile(
                   title: Text(
@@ -63,7 +104,7 @@ class _BuyPageState extends State<BuyPage>  {
                                   fontSize: 15,
                                     color: Colors.grey),
                               ),
-                              content: buy.image,
+                              content: Image.network(buy.image),
                             );
                           }
                       );
@@ -73,7 +114,7 @@ class _BuyPageState extends State<BuyPage>  {
               ),
             ),
           );
-        }
-    ),
-  );
+        } );
+  
+}
 }

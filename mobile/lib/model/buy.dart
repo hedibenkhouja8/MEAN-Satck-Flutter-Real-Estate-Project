@@ -7,7 +7,7 @@ class Buy{
   final String title;
   final String owner;
   final String description;
-  final Image image;
+  final String image;
   final int size;
   final int room_number;
   final String location;
@@ -23,4 +23,17 @@ class Buy{
     required this.location,
     required this.price
   });
+  factory Buy.fromJson(Map<String, dynamic> json) {
+    return Buy(
+        id: json['id'],
+        title: json['title'],
+        owner: json['owner'],
+        description: json['description'],
+        image: json['image'],
+        size: json['size'],
+        room_number: json['room_number'],
+        location: json['location'],
+        price: json['price']
+    );
+  }
 }

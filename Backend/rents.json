@@ -1,5 +1,4 @@
-{
-    "rents": [
+[
         {
             "id": "1",
             "title": "Introduction to Computer Science",
@@ -79,4 +78,3 @@
             "end_date_available": "21/01/2022"
         }
     ]
-}
