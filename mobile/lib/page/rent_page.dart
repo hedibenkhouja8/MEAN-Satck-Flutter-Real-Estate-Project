@@ -74,7 +74,7 @@ class _RentPageState extends State<RentPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Expanded(child: Image.network(rent.image)),
+                  Expanded(child: Image.asset(rent.image)),
                   const Divider(color: Colors.grey),
                   ListTile(
                     title: Text(
@@ -108,7 +108,7 @@ class _RentPageState extends State<RentPage> {
                                 style: const TextStyle(
                                     fontSize: 15, color: Colors.grey),
                               ),
-                              content: Image.network(rent.image),
+                              content: Image.asset(rent.image),
                             );
                           });
                     },
