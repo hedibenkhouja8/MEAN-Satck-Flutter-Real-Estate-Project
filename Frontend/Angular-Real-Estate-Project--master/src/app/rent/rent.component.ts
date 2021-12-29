@@ -37,20 +37,48 @@ export class RentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rentService.all().subscribe((res) => (this.rentList = res));
+    this.getAllRents();
   }
-  public addTofav(id: string): void {
+  public addTofav(id: string) {
     this.favService.add(id);
+  }
+
+  public getAllRents(){
+    this.rentService.all().subscribe((res) => (this.rentList = res));
+
   }
   public addRent() {
     this.rentService.create(this.formValue.value).subscribe(res => {
 
       if(res.status == 201) {
         this.formValue.reset();
-        this.router.navigate(['/rent']);
-        window.location.reload();
+        alert("house rent added successfully");
+        this.getAllRents();
+
       }
     });
 
   }
-}
+
+  public deleteRent(rent : any){
+    this.rentService.delete(rent._id).subscribe(res => {
+      alert("house rent deleted ");
+      this.getAllRents();
+
+  });
+  }
+  onEditRent(rent : any){
+    this.formValue.controls['title'].setValue(rent.title);
+    this.formValue.controls['owner'].setValue(rent.owner);
+    this.formValue.controls['description'].setValue(rent.description);
+    this.formValue.controls['image'].setValue(rent.image);
+    this.formValue.controls['size'].setValue(rent.size);
+    this.formValue.controls['room_number'].setValue(rent.room_number);
+    this.formValue.controls['location'].setValue(rent.location);
+    this.formValue.controls['price_per_month'].setValue(rent.price_per_month);
+    this.formValue.controls['start_date_available'].setValue(rent.start_date_available);
+    this.formValue.controls['end_date_available'].setValue(rent.end_date_available);
+  }
+
+  }
+
