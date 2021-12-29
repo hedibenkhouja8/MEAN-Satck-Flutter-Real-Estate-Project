@@ -1,4 +1,9 @@
 const Buy = require('./../models/Buy');
+const express = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'assets/' })
+
+const app = express()
 exports.all = (req, res) => {
   Buy.find()
     .then(buys => res.status(200).json(buys))
@@ -14,7 +19,7 @@ exports.get = (req, res, next) => {
           ...req.body
         });
         buy.save()
-          .then(() => res.status(201).json({ message: 'Buy created  !'}))
+          .then(() => res.status(201).json({ message: 'Buy created  !',status: 201}))
           .catch(error => res.status(400).json({ error }));
       };
       exports.update = (req, res, next) => {

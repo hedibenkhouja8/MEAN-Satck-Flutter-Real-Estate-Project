@@ -13,7 +13,6 @@ const buySchema = new mongoose.Schema({
   location: {type: String, required: true},
   price: {type: Number, required: true},
   
-  user_id: {type: String, required: true}
 });
 
 module.exports = mongoose.model('Buy', buySchema);

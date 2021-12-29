@@ -5,6 +5,8 @@ import { BuyRoutingModule } from './buy-routing.module';
 import { BuyComponent } from './buy.component';
 import { DescriptionComponent } from './description/description.component';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { DescriptionComponent } from './description/description.component';
   ],
   imports: [
     CommonModule,
-    BuyRoutingModule
+    BuyRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class BuyModule { }
