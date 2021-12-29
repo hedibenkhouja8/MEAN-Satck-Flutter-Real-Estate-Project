@@ -1,4 +1,8 @@
 const Rent = require('./../models/Rent');
+const express = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'images/' })
+const app = express()
 exports.all = (req, res) => {
     Rent.find()
         .then(rents => res.status(200).json(rents))
@@ -14,7 +18,7 @@ exports.create = (req, res, next) => {
         ...req.body
     });
     rent.save()
-        .then(() => res.status(201).json({ message: 'Rent created  !' }))
+        .then(() => res.status(201).json({message: 'Rent created  !',status: 201}))
         .catch(error => res.status(400).json({ error }));
 };
 exports.update = (req, res, next) => {

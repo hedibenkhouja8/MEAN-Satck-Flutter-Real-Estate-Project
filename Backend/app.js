@@ -4,7 +4,7 @@ const app = express();
 
 const buyRouter = require('./routes/buys');
 const rentRouter = require('./routes/rents');
- const aboutRouter = require('./routes/abouts');
+const aboutRouter = require('./routes/abouts');
 mongoose.connect('mongodb://localhost:27017/real_estate',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
