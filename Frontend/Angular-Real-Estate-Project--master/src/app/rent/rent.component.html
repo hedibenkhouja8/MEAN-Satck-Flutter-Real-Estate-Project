@@ -46,57 +46,57 @@
         <form [formGroup]="formValue"(ngSubmit)="addRent()" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
               formControlName="title" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Owner</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner"
+            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner" required
               aria-describedby="emailHelp" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Description</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description"
+            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description" required
               aria-describedby="emailHelp" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Image</label>
-            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
+            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
               formControlName="image" aria-describedby="emailHelp" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Size</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size"
+            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size" required
               aria-describedby="emailHelp" />
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Room Number</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number"
+            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number" required
               aria-describedby="emailHelp" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Location</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location"
+            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location" required
               aria-describedby="emailHelp" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Price per month</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month"
+            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month" required
               aria-describedby="emailHelp" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
-            <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available"
+            <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available" required
               aria-describedby="emailHelp" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
-            <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available"
+            <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available" required
               aria-describedby="emailHelp" />
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
@@ -199,57 +199,57 @@ aria-hidden="true">
       <form [formGroup]="formValue"(ngSubmit)="UpdateRent()" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Title</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
             formControlName="title" />
         </div>
 
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Name Owner</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner"
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner" required
             aria-describedby="emailHelp" />
         </div>
 
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Description</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description"
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description" required
             aria-describedby="emailHelp" />
         </div>
 
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Image</label>
-          <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
+          <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
             formControlName="image" aria-describedby="emailHelp" />
         </div>
 
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Size</label>
-          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size"
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size" required
             aria-describedby="emailHelp" />
         </div>
 
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Room Number</label>
-          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number"
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number" required
             aria-describedby="emailHelp" />
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Location</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location"
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location" required
             aria-describedby="emailHelp" />
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Price per month</label>
-          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month"
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month" required
             aria-describedby="emailHelp" />
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Start date available</label>
-          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available"
+          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available" required
             aria-describedby="emailHelp" />
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">End date available</label>
-          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available"
+          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available" required
             aria-describedby="emailHelp" />
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
