@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/auth/sign_in.dart';
 import 'package:mobile/auth/sign_up.dart';
+import 'package:mobile/page/buy_page.dart';
+import 'package:mobile/page/rent_page.dart';
 import 'package:mobile/widget/navigation_drawer_widget.dart';
 
 
@@ -82,13 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.home, color: Colors.white), label: 'home',backgroundColor: Colors.blue,),
 
           BottomNavigationBarItem(
+              icon: Icon(Icons.home_work_outlined, color: Colors.white), label: 'rent',backgroundColor: Colors.pinkAccent),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.monetization_on_outlined, color: Colors.white), label: 'buy',backgroundColor: Colors.amberAccent),
+          BottomNavigationBarItem(
               icon: Icon(Icons.contact_mail, color: Colors.white), label: 'contact us',backgroundColor: Colors.redAccent),
           BottomNavigationBarItem(
-              icon: Icon(Icons.help, color: Colors.white), label: 'about',backgroundColor: Colors.purpleAccent),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on_outlined, color: Colors.white), label: 'rent',backgroundColor: Colors.pinkAccent),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on_outlined, color: Colors.white), label: 'buy',backgroundColor: Colors.amberAccent)
+              icon: Icon(Icons.help, color: Colors.white), label: 'about',backgroundColor: Colors.purpleAccent)
         ],
         currentIndex: $_currentindex,
         onTap: _display,
@@ -106,19 +108,23 @@ class _MyHomePageState extends State<MyHomePage> {
           $_currentindex = 0;
           break;
         case 1:
-          _displayed = 'contact us';
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => RentPage(),
+          ));
           $_currentindex = 1;
           break;
         case 2:
-          _displayed = 'about ';
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => BuyPage(),
+          ));
           $_currentindex = 2;
           break;
         case 3:
-          _displayed = 'rent ';
+          _displayed = 'about ';
           $_currentindex = 3;
           break;
         case 4:
-          _displayed = 'buy ';
+          _displayed = 'Contact Us ';
           $_currentindex = 4;
           break;
       }
