@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,27 +15,27 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return (Scaffold(
       body: Container(
-        /* decoration: BoxDecoration(
+         decoration: BoxDecoration(
           image: DecorationImage(
-            image: SvgPicture.asset(
-                'images/index_bg.svg',
+            image: AssetImage(
+                "images/index.jpg"
             ),
             fit: BoxFit.cover
           ),
-        ),*/
+        ),
         padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               const Padding(
-                padding: EdgeInsets.fromLTRB(0, 99, 0, 10),
+                padding: EdgeInsets.fromLTRB(0, 70, 0, 10),
                 child: Text(
                   "Hello There",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                      fontSize: 35),
                 ),
               ),
               const Padding(
@@ -41,14 +43,15 @@ class _IndexPageState extends State<IndexPage> {
                 child: Text(
                   "Let's Sign Up To Continue",
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.normal),
+                      color: Colors.white, fontWeight: FontWeight.normal, fontSize: 20),
                 ),
               ),
               Container(
                 height: 5.0,
-                width: 80.0,
+                width: 90.0,
+                  margin: const EdgeInsets.only(top: 10.0),
                 decoration: const BoxDecoration(
-                    color: Colors.black,
+                    color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
               ),
               Row(
@@ -60,33 +63,41 @@ class _IndexPageState extends State<IndexPage> {
                       child: RaisedButton(
                           color: Colors.white,
                           textColor: Colors.black,
-                          child: Row(children: const <Widget>[
-                            /* Icon(
-                            SvgPicture.asset('images/facebook.svg',),
 
-                          ),*/
-                            Text("Facebook"),
+                          child: Row(children: const <Widget>[
+
+                            Image(image: AssetImage("images/facebook.png"), height: 40,width: 40,),
+
+
+                            Text("Facebook",),
+
                           ]),
-                          padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
+
+                          padding: const EdgeInsets.fromLTRB(40, 8, 30, 8),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0)),
-                          onPressed: null)),
+                          onPressed: (){
+                            Icons.print;
+                          })),
                   Padding(
+
                     padding: const EdgeInsets.fromLTRB(0, 250, 0, 10),
                     child: RaisedButton(
                         color: Colors.white,
                         textColor: Colors.black,
-                        padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
+                        padding: const EdgeInsets.fromLTRB(30, 8, 50, 8),
+
                         child: Row(children: const <Widget>[
-                          /* Icon(
-                            SvgPicture.asset('images/message.svg',),
-                            
-                          ),*/
+
+                          Image(image: AssetImage("images/google.png"), height: 40,width: 40,),
+
                           Text("Google")
                         ]),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50.0)),
-                        onPressed: null),
+                        onPressed: (){
+                          Icons.print;
+                        }),
                   )
                 ],
               ),
@@ -95,11 +106,11 @@ class _IndexPageState extends State<IndexPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 30),
                       child: Text(
                         "Sign Up With",
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.normal),
+                            color: Colors.white, fontWeight: FontWeight.normal,fontSize: 20),
                       ),
                     ),
                   ]),
@@ -107,7 +118,7 @@ class _IndexPageState extends State<IndexPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: RaisedButton(
                           color: const Color.fromRGBO(45, 114, 178, 1),
                           textColor: Colors.white,
@@ -131,20 +142,20 @@ class _IndexPageState extends State<IndexPage> {
                       child: Text(
                         "Already have an account?",
                         style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal),
+                            fontSize: 17,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     FlatButton(
-                        padding: const EdgeInsets.fromLTRB(0, 70, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 70, 40, 0),
 
                         child: const Text(
                           'Sign In',
                           style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 17,
                               color: Color.fromRGBO(45, 114, 178, 1),
-                              fontWeight: FontWeight.normal),
+                              fontWeight: FontWeight.bold),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/signin');
@@ -155,3 +166,5 @@ class _IndexPageState extends State<IndexPage> {
     ));
   }
 }
+
+

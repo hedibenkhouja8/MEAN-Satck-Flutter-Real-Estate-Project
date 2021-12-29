@@ -11,7 +11,7 @@ class NumbersWidget extends StatelessWidget {
       buildDivider(),
       buildButton(context, '3', 'FeedBack'),
       buildDivider(),
-      buildButton(context, '7', 'Index'),
+
     ],
   );
   Widget buildDivider() => Container(
