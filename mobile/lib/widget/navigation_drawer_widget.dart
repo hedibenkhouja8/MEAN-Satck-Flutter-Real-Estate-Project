@@ -49,6 +49,12 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
+                    text: 'Rent',
+                    icon: Icons.home_work_outlined,
+                    onClicked: () => selectedItem(context,2),
+                  ),
+                  const SizedBox(height: 24),
+                  buildMenuItem(
                     text: 'Buy',
                     icon: Icons.monetization_on_outlined,
                     onClicked: () => selectedItem(context, 1),
@@ -56,14 +62,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'index',
-                    icon: Icons.monetization_on_outlined,
+                    icon: Icons.login,
                     onClicked: () => selectedItem(context, 7),
-                  ),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Rent',
-                    icon: Icons.monetization_on_outlined,
-                    onClicked: () => selectedItem(context,2),
                   ),
                   const SizedBox(height: 24),
                   buildMenuItem(
