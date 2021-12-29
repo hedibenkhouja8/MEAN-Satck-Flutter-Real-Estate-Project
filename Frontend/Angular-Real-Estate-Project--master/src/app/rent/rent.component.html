@@ -31,7 +31,7 @@
 
                                 </ul>
 
-<!-- Modal -->
+<!-- Modal add -->
 <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog">
@@ -162,6 +162,7 @@
               <i id="like" class="bi bi-heart"></i>
             </button>
 
+
             <p class="price mb-3">
               <span class="orig-price">{{ rent.price_per_month | currency: "EUR" }}/Month</span>
             </p>
@@ -179,6 +180,95 @@
               </li>
               <li><i class="bi bi-building"></i>{{ rent.size }}sqft</li>
             </ul>
+            <button type="button" (click)="onEditRent(rent)"  title="update rent" id="update"  data-bs-toggle="modal" data-bs-target="#modalUpdate"
+            class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <!-- Modal update -->
+<div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        Update a new House for rent
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formValue"(ngSubmit)="addRent()" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Title</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="title" />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name Owner</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner"
+            aria-describedby="emailHelp" />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Description</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description"
+            aria-describedby="emailHelp" />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Image</label>
+          <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
+            formControlName="image" aria-describedby="emailHelp" />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Size</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size"
+            aria-describedby="emailHelp" />
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Room Number</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Location</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Price per month</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Start date available</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">End date available</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available"
+            aria-describedby="emailHelp" />
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
+           save changes
+        </button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close</button>&nbsp;&nbsp;
+
+    </div>
+  </div>
+</div>
+</div>
+            <button type="button" (click)=" deleteRent(rent)" title="delete rent" id="delete"
+            class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-trash"></i>
+          </button>
           </div>
         </div>
       </div>
