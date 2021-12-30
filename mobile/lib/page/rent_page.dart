@@ -40,11 +40,7 @@ class _RentPageState extends State<RentPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
       //drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Text('Rent'),
-        centerTitle: true,
-        backgroundColor: Colors.pink,
-      ),
+
       body: loading ? waitingScreen() : rentsList());
 
   Widget waitingScreen() {
@@ -87,7 +83,7 @@ class _RentPageState extends State<RentPage> {
                       textAlign: TextAlign.start,
                     ),
                     subtitle: Text(
-                      "price/month: \$${rent.price_per_month.toString()}£",
+                      "price/month: ${rent.price_per_month.toString()}£",
                       style: const TextStyle(color: Colors.grey, fontSize: 11),
                     ),
                     onTap: () {
@@ -104,7 +100,7 @@ class _RentPageState extends State<RentPage> {
                                 "Availability :\n"
                                 " ${rent.start_date_available}"
                                 " to ${rent.end_date_available}"
-                                "\n Price/month: \$${rent.price_per_month.toString()}£",
+                                "\n Price/month: ${rent.price_per_month.toString()}£",
                                 style: const TextStyle(
                                     fontSize: 15, color: Colors.grey),
                               ),
