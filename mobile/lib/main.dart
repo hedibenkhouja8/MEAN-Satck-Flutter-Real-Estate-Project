@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/auth/sign_in.dart';
 import 'package:mobile/auth/sign_up.dart';
-import 'package:mobile/page/buy_page.dart';
-import 'package:mobile/page/rent_page.dart';
-import 'package:mobile/widget/navigation_drawer_widget.dart';
-
-
+import 'package:mobile/page/home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,30 +18,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home: const MyHomePage(title: 'project'),
+      home: const MyHomePage(),
 
       routes: {
 
         '/signup': (BuildContext context)=>const SignUpPage(),
         '/signin': (BuildContext context)=>const SignInPage(),
+        '/home': (BuildContext context)=>const HomePage(),
       },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+  const MyHomePage({Key? key,}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -55,79 +39,157 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-
-  var text;
-  var $ind;
-  var _displayed = 'home';
-  var $_currentindex = 0;
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-      drawer:NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: Text('project'),
-        backgroundColor: Colors.blue,
-        actions: [
-          IconButton(
-              onPressed: null,
-              icon: Icon(Icons.account_box_rounded, color: Colors.white))
-        ],
-      ),
-      body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('$_displayed', style: TextStyle(fontSize: 20))])
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.white), label: 'home',backgroundColor: Colors.blue,),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(
+                  "images/index.jpg"
+              ),
+              fit: BoxFit.cover
+          ),
+        ),
+        padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 70, 0, 10),
+                child: Text(
+                  "Hello There",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                child: Text(
+                  "Let's Sign Up To Continue",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.normal, fontSize: 20),
+                ),
+              ),
+              Container(
+                height: 5.0,
+                width: 90.0,
+                margin: const EdgeInsets.only(top: 10.0),
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 250, 0, 10),
+                      child: RaisedButton(
+                          color: Colors.white,
+                          textColor: Colors.black,
 
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_work_outlined, color: Colors.white), label: 'rent',backgroundColor: Colors.pinkAccent),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.monetization_on_outlined, color: Colors.white), label: 'buy',backgroundColor: Colors.amberAccent),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.contact_mail, color: Colors.white), label: 'contact us',backgroundColor: Colors.redAccent),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.help, color: Colors.white), label: 'about',backgroundColor: Colors.purpleAccent)
-        ],
-        currentIndex: $_currentindex,
-        onTap: _display,
+                          child: Row(children: const <Widget>[
 
+                            Image(image: AssetImage("images/facebook.png"), height: 40,width: 40,),
+
+
+                            Text("Facebook",),
+
+                          ]),
+
+                          padding: const EdgeInsets.fromLTRB(40, 8, 30, 8),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50.0)),
+                          onPressed: (){
+                            Icons.print;
+                          })),
+                  Padding(
+
+                    padding: const EdgeInsets.fromLTRB(0, 250, 0, 10),
+                    child: RaisedButton(
+                        color: Colors.white,
+                        textColor: Colors.black,
+                        padding: const EdgeInsets.fromLTRB(30, 8, 50, 8),
+
+                        child: Row(children: const <Widget>[
+
+                          Image(image: AssetImage("images/google.png"), height: 40,width: 40,),
+
+                          Text("Google")
+                        ]),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0)),
+                        onPressed: (){
+                          Icons.print;
+                        }),
+                  )
+                ],
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 20, 0, 30),
+                      child: Text(
+                        "Sign Up With",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.normal,fontSize: 20),
+                      ),
+                    ),
+                  ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      child: RaisedButton(
+                          color: const Color.fromRGBO(45, 114, 178, 1),
+                          textColor: Colors.white,
+                          child: const Text("Sign Up With Email or Phone"),
+                          padding: const EdgeInsets.fromLTRB(70, 20, 70, 20),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50.0)),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/signup');
+                          }
+                      )
+                  ),
+                ],
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:  [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
+                      child: Text(
+                        "Already have an account?",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    FlatButton(
+                        padding: const EdgeInsets.fromLTRB(0, 70, 40, 0),
+
+                        child: const Text(
+                          'Sign In',
+                          style: TextStyle(
+                              fontSize: 17,
+                              color: Color.fromRGBO(45, 114, 178, 1),
+                              fontWeight: FontWeight.bold),
+                        ),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/signin');
+                        })
+                  ]),
+            ]),
       ),
-
     ));
-  }
-
-  void _display(int index) {
-    setState(() {
-      switch (index) {
-        case 0:
-          _displayed = 'home';
-          $_currentindex = 0;
-          break;
-        case 1:
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => RentPage(),
-          ));
-          $_currentindex = 1;
-          break;
-        case 2:
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => BuyPage(),
-          ));
-          $_currentindex = 2;
-          break;
-        case 3:
-          _displayed = 'about ';
-          $_currentindex = 3;
-          break;
-        case 4:
-          _displayed = 'Contact Us ';
-          $_currentindex = 4;
-          break;
-      }
-    });
-  }
-}
+}}
