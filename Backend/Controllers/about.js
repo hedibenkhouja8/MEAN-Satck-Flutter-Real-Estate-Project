@@ -1,4 +1,9 @@
 const About = require('./../models/About');
+const express = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'images/' })
+const app = express()
+
 exports.all = (req, res) => {
     About.find()
         .then(abouts => res.status(200).json(abouts))
@@ -14,7 +19,7 @@ exports.create = (req, res, next) => {
         ...req.body
     });
     about.save()
-        .then(() => res.status(201).json({ message: 'About created  !' }))
+        .then(() => res.status(201).json({ message: 'About created  !',status: 201}))
         .catch(error => res.status(400).json({ error }));
 };
 exports.update = (req, res, next) => {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient,HttpErrorResponse,HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +30,29 @@ export class AboutService {
     return this.http.get(this.apiUrl + '/' + id);
   }
 
+/**
+   *
+  * @param error 
+  * @returns
+  */
+ handleError(error: HttpErrorResponse) {
+   let msg = '';
+   if (error.error instanceof ErrorEvent) {
+     // client-side error
+     msg = error.error.message;
+   } else {
+     // server-side error
+     msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+   }
+   return throwError(msg);
+ }
+
   /**
    * Create a new Agency about
    * @param about new agency to create
    */
-   create(about: any) {
-    return this.http.post(this.apiUrl, about);
+   create(about: any):Observable<any>  {
+    return this.http.post(this.apiUrl, about).pipe(catchError(this.handleError));
   }
 
   /**
