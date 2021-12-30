@@ -47,6 +47,101 @@
     </div>
 </section> -->
 
+
+	<!-- Button trigger modal -->
+  <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
+
+    <li class="nav-item">
+      <a class="nav-link active btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true" style="margin-left: 30cm;">Add House</a>
+    </li>
+
+  </ul>
+
+<!-- Modal add -->
+<div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Adding a new Agency
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup]="formValue"(ngSubmit)="addAbout()" enctype="multipart/form-data" >
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name Owner</label>
+            <input type="text" class="form-control"  required
+              formControlName="owner" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Image Owner</label>
+            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
+              formControlName="image_owner" aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control"  formControlName="mail" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="tel" class="form-control"  formControlName="phone" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Location</label>
+            <input type="text" class="form-control"  formControlName="location" required
+              aria-describedby="emailHelp" />
+          </div>
+            
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Image Location</label>
+            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
+              formControlName="image_location" aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">The head office</label>
+            <input type="text" class="form-control"  formControlName="siege_social" required
+              aria-describedby="emailHelp" />
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Creation Date</label>
+            <input type="date" class="form-control"  formControlName="date_creation" required
+              aria-describedby="emailHelp" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Schedule</label>
+            <input type="text" class="form-control"  formControlName="horaire" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Description</label>
+            <input type="text" class="form-control"  formControlName="description" required
+              aria-describedby="emailHelp" />
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
+             add
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close</button>&nbsp;&nbsp;
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="ftco-section ftco-no-pb" *ngFor="let agency of agencyList">
     <div class="container">
         <div class="row">
@@ -59,6 +154,103 @@
         <p>{{ agency.description }}</p>
         <p></p>
         <p><a  routerLink="/about/{{agency._id}}" class="btn btn-primary">More details</a></p>
+
+        <!-- Button trigger modal -->
+        
+        <button type="button" (click)="onEditAbout(agency)"  title="update About" id="update"  data-bs-toggle="modal" data-bs-target="#modalUpdate"
+            class="btn btn-sm btn-outline-secondary">Update
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <br>
+          <br>
+          <button type="button" (click)="delete(agency)" class="btn btn-sm btn-outline-danger">delete
+            <i class="bi bi-trash-square"></i>
+          </button>
+        
+<!-- Modal add -->
+<div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Update a Agency
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form  [formGroup]="formValue"(ngSubmit)="UpdateAbout()" enctype="multipart/form-data" >
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name Owner</label>
+            <input type="text" class="form-control"  required
+              formControlName="owner" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Image Owner</label>
+            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
+              formControlName="image_owner" aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control"  formControlName="mail" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="tel" class="form-control"  formControlName="phone" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Location</label>
+            <input type="text" class="form-control"  formControlName="location" required
+              aria-describedby="emailHelp" />
+          </div>
+            
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Image Location</label>
+            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
+              formControlName="image_location" aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">The head office</label>
+            <input type="text" class="form-control"  formControlName="siege_social" required
+              aria-describedby="emailHelp" />
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Creation Date</label>
+            <input type="date" class="form-control"  formControlName="date_creation" required
+              aria-describedby="emailHelp" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Schedule</label>
+            <input type="text" class="form-control"  formControlName="horaire" required
+              aria-describedby="emailHelp" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Description</label>
+            <input type="text" class="form-control"  formControlName="description" required
+              aria-describedby="emailHelp" />
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
+             Update
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close</button>&nbsp;&nbsp;
+
+      </div>
+    </div>
+  </div>
+</div>
       </div>
             </div>
         </div>
