@@ -3,10 +3,12 @@ import 'package:mobile/page/Servives_page.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/profile_page.dart';
 import 'package:mobile/page/rent_page.dart';
-import 'package:mobile/auth/index.dart';
+
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
+
+   NavigationDrawerWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final name = 'Youssef Farhat';
@@ -59,12 +61,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                     icon: Icons.monetization_on_outlined,
                     onClicked: () => selectedItem(context, 1),
                   ),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'index',
-                    icon: Icons.login,
-                    onClicked: () => selectedItem(context, 7),
-                  ),
+
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Services',
@@ -204,11 +201,7 @@ class NavigationDrawerWidget extends StatelessWidget {
           builder: (context) => Servives(),
         ));
         break;
-      case 7:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const IndexPage(),
-        ));
-        break;
+
     }
   }
 }
