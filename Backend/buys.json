@@ -1,5 +1,4 @@
-{
-    "buys":[
+   [
         {
             "id": "1",
             "title": "Introduction to Computer Science",
@@ -63,4 +62,3 @@
             "price": "100.99"
           }
     ]
-}
