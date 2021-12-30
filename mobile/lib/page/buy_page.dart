@@ -38,11 +38,7 @@ class _BuyPageState extends State<BuyPage>  {
   Widget build(BuildContext context) => Scaffold(
     //drawer: NavigationDrawerWidget(),
          //drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: const Text('Buy'),
-        centerTitle: true,
-        backgroundColor: Colors.pink,
-      ),
+
       body: loading ? waitingScreen() : buysList());
 
   Widget waitingScreen() {
