@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/page/Servives_page.dart';
+import 'package:mobile/main.dart';
 import 'package:mobile/page/buy_page.dart';
+import 'package:mobile/page/index_page.dart';
 import 'package:mobile/page/profile_page.dart';
 import 'package:mobile/page/rent_page.dart';
-
+import 'package:mobile/page/services_page.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
 
-   const NavigationDrawerWidget({Key? key}) : super(key: key);
+  const NavigationDrawerWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     const name = 'Youssef Farhat';
@@ -26,72 +28,176 @@ class NavigationDrawerWidget extends StatelessWidget {
               name: name,
               email: email,
               onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ProfilePage(),
+                builder: (context) => const ProfilePage(),
               )),
             ),
             Container(
               padding: padding,
               child: Column(
                 children: [
-                  const SizedBox(height: 12),
                   buildSearchField(),
-                  Divider(color: Colors.white70),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Profile',
-                    icon: Icons.account_circle,
-                    onClicked: () => {selectedItem(context, 0)},
-                  ),
-                  const SizedBox(height: 16),
                   const Divider(color: Colors.white70),
-                  buildMenuItem(
-                    text: 'Home',
-                    icon: Icons.home,
-                    onClicked: () => {},
+                  ListTile(
+                    leading: const Icon(
+                      Icons.account_circle,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Profile',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ProfilePage()),
+                      )
+                    },
                   ),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Rent',
-                    icon: Icons.home_work_outlined,
-                    onClicked: () => selectedItem(context,2),
+                  const Divider(color: Colors.white70),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Home',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => IndexPage()),
+                      ),
+                    },
                   ),
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Buy',
-                    icon: Icons.monetization_on_outlined,
-                    onClicked: () => selectedItem(context, 1),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.home_work_outlined,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Rent',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RentPage()),
+                      )
+                    },
                   ),
-
-                  const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Services',
-                    icon: Icons.paste_sharp,
-                    onClicked: () => selectedItem(context,3 ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.monetization_on_outlined,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Buy',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BuyPage()),
+                      )
+                    },
                   ),
-                  const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'About Us',
-                    icon: Icons.help,
-                    onClicked: () =>{},
+                  ListTile(
+                    leading: const Icon(
+                      Icons.paste_sharp,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Services',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Services()),
+                      )
+                    },
                   ),
-                  const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'Contact US',
-                    icon: Icons.contact_mail,
-                    onClicked: () => {},
+                  ListTile(
+                    leading: const Icon(
+                      Icons.help,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'About Us',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {},
                   ),
-                  const SizedBox(height: 24),
-                  Divider(color: Colors.white70),
-
-                  const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'Notifications',
-                    icon: Icons.notifications_outlined,
-                    onClicked: () => {},
+                  ListTile(
+                    leading: const Icon(
+                      Icons.contact_mail,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Contact US',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {},
+                  ),
+                  const Divider(color: Colors.white70),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.notifications_outlined,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Notifications',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {},
+                  ),
+                  ListTile(
+                    leading: const Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                    ),
+                    title: const Text(
+                      'Logout',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      )
+                    },
                   ),
                 ],
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  child:
+                Text(
+                  "made with",
+                  style: TextStyle(color: Colors.white, fontSize: 10),
+                )),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  child:
+                Icon(
+                  Icons.favorite,
+                  color: Colors.white,
+                  size: 10,
+                )),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                  child:
+                Text(
+                  "By FindState",
+                  style: TextStyle(color: Colors.white, fontSize: 10),
+                )),
+              ],
+            )
           ],
         ),
       ),
@@ -127,9 +233,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               Spacer(),
-
-              Icon(Icons.add_comment_outlined, color: Colors.white),
-
+              Icon(Icons.edit, color: Colors.white),
             ],
           ),
         ),
@@ -162,44 +266,16 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget buildMenuItem({
     required String text,
     required IconData icon,
-    VoidCallback? onClicked,
+    VoidCallback? onTap,
   }) {
-    final color = Colors.white;
-    final hoverColor = Colors.white70;
+    const color = Colors.white;
+    const hoverColor = Colors.white70;
 
     return ListTile(
       leading: Icon(icon, color: color),
       title: Text(text, style: TextStyle(color: color)),
       hoverColor: hoverColor,
-      onTap: onClicked,
+      onTap: onTap,
     );
-  }
-
-  void selectedItem(BuildContext context, int index) {
-    Navigator.of(context).pop();
-
-    switch (index) {
-      case 0:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ProfilePage(),
-        ));
-        break;
-      case 1:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => BuyPage(),
-        ));
-        break;
-      case 2:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => RentPage(),
-        ));
-        break;
-      case 3:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => Servives(),
-        ));
-        break;
-
-    }
   }
 }

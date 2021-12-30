@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Servives extends StatelessWidget {
+class Services extends StatelessWidget {
+  const Services({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: Text('Servives'),
+      title: const Text('Services'),
       centerTitle: true,
       backgroundColor: Colors.red,
     ),

@@ -12,20 +12,20 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: IndexPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class IndexPage extends StatefulWidget {
+  const IndexPage({Key? key}) : super(key: key);
 
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<IndexPage> createState() => _IndexPageState();
 }
 
-class _HomePageState extends State<HomePage>
+class _IndexPageState extends State<IndexPage>
 {
 
 final List<Widget> _children=[

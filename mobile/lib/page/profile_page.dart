@@ -7,6 +7,8 @@ import 'package:mobile/widget/numbers_widget.dart';
 import 'package:mobile/widget/profile_widget.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }

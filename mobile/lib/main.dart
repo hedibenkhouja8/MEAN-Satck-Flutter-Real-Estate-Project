@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/auth/sign_in.dart';
 import 'package:mobile/auth/sign_up.dart';
+import 'package:mobile/page/services_page.dart';
 import 'package:mobile/page/index_page.dart';
+import 'package:mobile/page/profile_page.dart';
 
 void main() {
   runApp( const MyApp());
@@ -25,6 +27,10 @@ class MyApp extends StatelessWidget {
         '/signup': (BuildContext context)=>const SignUpPage(),
         '/signin': (BuildContext context)=>const SignInPage(),
         '/home': (BuildContext context)=>const App(),
+        '/profile': (BuildContext context)=>const ProfilePage(),
+        '/services': (BuildContext context)=> const Services(),
+        '/home': (BuildContext context)=>const App(),
+
       },
     );
   }
