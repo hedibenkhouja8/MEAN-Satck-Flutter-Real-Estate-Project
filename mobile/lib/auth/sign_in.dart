@@ -108,7 +108,9 @@ class _SignInPageState extends State<SignInPage> {
                           padding: const EdgeInsets.fromLTRB(120, 20, 120, 20),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0)),
-                          onPressed: null)),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/home');
+                          })),
                 ],
               ),
               Row(
