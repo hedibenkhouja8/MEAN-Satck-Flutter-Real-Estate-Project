@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/auth/sign_in.dart';
 import 'package:mobile/auth/sign_up.dart';
-import 'package:mobile/page/home_page.dart';
+import 'package:mobile/page/index_page.dart';
 
 void main() {
   runApp( const MyApp());
@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
 
         '/signup': (BuildContext context)=>const SignUpPage(),
         '/signin': (BuildContext context)=>const SignInPage(),
-        '/home': (BuildContext context)=>const HomePage(),
+        '/home': (BuildContext context)=>const App(),
       },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key,}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();

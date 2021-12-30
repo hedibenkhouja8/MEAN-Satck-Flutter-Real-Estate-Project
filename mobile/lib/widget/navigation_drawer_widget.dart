@@ -6,19 +6,19 @@ import 'package:mobile/page/rent_page.dart';
 
 
 class NavigationDrawerWidget extends StatelessWidget {
-  final padding = EdgeInsets.symmetric(horizontal: 20);
+  final padding = const EdgeInsets.symmetric(horizontal: 20);
 
-   NavigationDrawerWidget({Key? key}) : super(key: key);
+   const NavigationDrawerWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final name = 'Youssef Farhat';
-    final email = 'Youssef@gmail.com';
-    final urlImage =
+    const name = 'Youssef Farhat';
+    const email = 'Youssef@gmail.com';
+    const urlImage =
         'https://scontent.ftun9-1.fna.fbcdn.net/v/t1.6435-9/81098081_2815874341798217_8909688804038672384_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=98tiF9PBgmwAX-CBzZQ&_nc_ht=scontent.ftun9-1.fna&oh=35969c2b5019bc2c111259bfbb833746&oe=61CAEF45';
 
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(50, 75, 205, 1),
+        color: Color.fromRGBO(212, 202, 104, 1),
         child: ListView(
           children: <Widget>[
             buildHeader(
@@ -43,7 +43,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                     onClicked: () => {selectedItem(context, 0)},
                   ),
                   const SizedBox(height: 16),
-                  Divider(color: Colors.white70),
+                  const Divider(color: Colors.white70),
                   buildMenuItem(
                     text: 'Home',
                     icon: Icons.home,
@@ -127,11 +127,9 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               Spacer(),
-              CircleAvatar(
-                radius: 24,
-                backgroundColor: Color.fromRGBO(30, 60, 168, 1),
-                child: Icon(Icons.add_comment_outlined, color: Colors.white),
-              )
+
+              Icon(Icons.add_comment_outlined, color: Colors.white),
+
             ],
           ),
         ),
