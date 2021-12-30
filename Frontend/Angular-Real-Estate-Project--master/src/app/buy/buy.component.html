@@ -29,53 +29,52 @@
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<form [formGroup]="formValue"(ngSubmit)="addbuy()" enctype="multipart/form-data">
+			<form [formGroup]="formValue"(ngSubmit)="addbuy()"  enctype="multipart/form-data" >
 				<div class="mb-3">
 				  <label for="exampleInputEmail1" class="form-label">Title</label>
-				  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="title">
+				  <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="title">
 				</div>
 				
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Name</label>
-					<input type="text" class="form-control" id="exampleInputEmail1"  formControlName="owner" aria-describedby="emailHelp">
+					<input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="owner" aria-describedby="emailHelp">
 				  </div>
 				  
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Description</label>
-					<input type="text" class="form-control" id="exampleInputEmail1"  formControlName="description" aria-describedby="emailHelp">
+					<input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="description" aria-describedby="emailHelp">
 				  </div>
 				  
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Image</label>
-					<input type="file" 
-					accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1"  name ="image"formControlName="image" aria-describedby="emailHelp">
+					<input required type="file" 
+					accept="image/png, image/jpeg" class="form-control" id="exampleInput1"  name ="file" formControlName="image" aria-describedby="emailHelp">
 				  </div>
 				  
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Size</label>
-					<input type="number" class="form-control" id="exampleInputEmail1"  formControlName="size" aria-describedby="emailHelp">
+					<input  required type="number" class="form-control" id="exampleInputEmail1"  formControlName="size" aria-describedby="emailHelp">
 				  </div>
 				  
 				<div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Room Number</label>
-					<input type="number" class="form-control" id="exampleInputEmail1"  formControlName="room_number" aria-describedby="emailHelp">
+					<input required type="number" class="form-control" id="exampleInputEmail1"  formControlName="room_number" aria-describedby="emailHelp">
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Location</label>
-					<input type="text" class="form-control" id="exampleInputEmail1"   formControlName="location" aria-describedby="emailHelp">
+					<input required type="text" class="form-control" id="exampleInputEmail1"   formControlName="location" aria-describedby="emailHelp">
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Price</label>
-					<input type="number" class="form-control" id="exampleInputEmail1"  formControlName="price" aria-describedby="emailHelp">
+					<input required type="number" class="form-control" id="exampleInputEmail1"  formControlName="price" aria-describedby="emailHelp">
 				  </div>
-				  <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign up</button>
+				  <button required class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Save changes</button>
 			
 			
 			  </form>
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>&nbsp;&nbsp;
-		  <button type="button" class="btn btn-primary">Save changes</button>
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		</div>
 	  </div>
 	</div>
@@ -122,6 +121,85 @@
         					<li><i class="bi bi-building"></i>{{ buy.size }}sqft</li>
 
         				</ul>
+						<button type="button" (click)="onEditbuy(buy)"  title="update rent" id="update"  data-bs-toggle="modal" data-bs-target="#modalUpdate"
+						class="btn btn-sm btn-outline-secondary">
+						<i class="bi bi-pencil-square"></i>
+					  </button>
+					  <!-- Modal update -->
+			<div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">
+					Update a new House for sale
+				  </h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				  <form [formGroup]="formValue"(ngSubmit)="UpdateBuy()" enctype="multipart/form-data">
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Title</label>
+					  <input  required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+						formControlName="title" />
+					</div>
+			
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Name Owner</label>
+					  <input  required type="text" class="form-control" id="exampleInputEmail1" formControlName="owner"
+						aria-describedby="emailHelp" />
+					</div>
+			
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Description</label>
+					  <input required type="text" class="form-control" id="exampleInputEmail1" formControlName="description"
+						aria-describedby="emailHelp" />
+					</div>
+			
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Image</label>
+					  <input required type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image"
+						formControlName="image" aria-describedby="emailHelp" />
+					</div>
+			
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Size</label>
+					  <input required type="number" class="form-control" id="exampleInputEmail1" formControlName="size"
+						aria-describedby="emailHelp" />
+					</div>
+			
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Room Number</label>
+					  <input required type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number"
+						aria-describedby="emailHelp" />
+					</div>
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Location</label>
+					  <input required type="text" class="form-control" id="exampleInputEmail1" formControlName="location"
+						aria-describedby="emailHelp" />
+					</div>
+					<div class="mb-3">
+					  <label for="exampleInputEmail1" class="form-label">Price </label>
+					  <input required type="number" class="form-control" id="exampleInputEmail1" formControlName="price"
+						aria-describedby="emailHelp" />
+					</div>
+					<button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
+					   save changes
+					</button>
+				  </form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+					Close</button>&nbsp;&nbsp;
+			
+				</div>
+			  </div>
+			</div>
+			</div>
+						<button type="button" (click)=" deleteBuy(buy)" title="delete buy" id="delete" onclick="confirm('would you really delete')"
+						class="btn btn-sm btn-outline-secondary">
+						<i class="bi bi-trash"></i>
+					  </button>
         			</div>
         		</div>
         	</div>

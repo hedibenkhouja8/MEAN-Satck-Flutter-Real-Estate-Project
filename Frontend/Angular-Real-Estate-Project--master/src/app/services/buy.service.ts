@@ -13,14 +13,14 @@ import { catchError } from 'rxjs/operators';
 export class BuyService {
   private apiUrl='http://localhost:3000/api/buys';
 
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  headers = new HttpHeaders().set('Accept', 'multipart/form-data');
 
 constructor(private http: HttpClient) {}
 /**
  *Get all buys
  * @returns Observable<Buy[]>
  */
-all() {
+alla() {
   return this.http.get(this.apiUrl);
 }
 
