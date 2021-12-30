@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl='https://my-json-server.typicode.com/oussama-abid/Fakeapi/users';
+  private apiUrl='http://localhost:3000/api/team';
 
   constructor(private http: HttpClient) {}
   /**
