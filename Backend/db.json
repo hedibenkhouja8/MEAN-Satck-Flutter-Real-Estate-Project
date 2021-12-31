@@ -155,5 +155,82 @@
           "location": "bizerte",
           "price":  100.99
         }
+    ],
+    "agencies":[
+    {
+      "id": "1",
+      "owner": "oussama abid",
+      "mail": "oussama@gmail.com",
+      "phone": "+21687654321",
+      "image_owner": "images/oussama.jpg", 
+      "location": "Bizerte",
+      "image_location":"images/Vieux_Port_Bizerte.jpg",
+      "description": "Bizerte Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
+      "siege_social": "Angle Rues 1 Mai / Med Ali Tour Bureaux Bizerte Center 7000 Bizerte –Tunisie",
+      "date_creation":"25/09/2020",
+      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
+    },
+    {
+      "id": "2",
+      "owner": "youssef farhat",
+      "mail": "youssef@gmail.com",
+      "phone": "+21655387849",
+      "image_owner": "images/youssef.jpg", 
+      "location": "Tunis",
+      "image_location":"images/tn.jpg",
+      "description": "Tunis Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
+      "siege_social": "44 Route de la Marsa Km 9 / 2045 El Aouina",
+      "date_creation":"25/09/2021",
+      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
+      
+    },
+    {
+      "id": "3",
+      "owner": "melek labidi",
+      "mail": "melek@gmail.com",
+      "phone": "+21621436587",
+      "image_owner": "images/melek.jpg", 
+      "location": "Nabeul",
+      "image_location":"images/nb.jpg",
+      "description": "Nabeul Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
+      "siege_social": " 144 Avenue Habib Thameur Nabeul Tunisie",
+      "date_creation":"27/11/2021",
+      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
+    }
+    ],
+    "agents": [
+{
+      "id": "1",
+      "name": "oussama abid",
+      "mail": "oussama@gmail.com",
+      "phone": "+21687654321",
+      "image": "images/oussama.jpg", 
+      "location": "bizerte"
+    
+      
+    },{
+        "id": "2",
+        "name": "Hedi ben khouja",
+        "mail": "Hedi@gmail.com",
+        "phone": "+21612345678",
+        "image": "images/hedi.jpg", 
+        "location": "bizerte"
+      
+    },{
+      "id": "3",
+      "name": "youssef farhat",
+      "mail": "youssef@gmail.com",
+      "phone": "+21678563412",
+      "image": "images/youssef.jpg", 
+      "location": "tunis"
+    },{
+      "id": "4",
+      "name": "melek labidi",
+      "mail": "melek@gmail.com",
+      "phone": "+21621436587",
+      "image": "images/melek.jpg", 
+      "location": "bizerte"
+    }
     ]
+
   }
