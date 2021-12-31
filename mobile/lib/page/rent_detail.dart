@@ -59,7 +59,7 @@ class RentDetail extends StatelessWidget {
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
-                  fontSize: 24.0)),
+                  fontSize: 20.0)),
         ),
         SizedBox(height: 10.0),
         Center(
@@ -67,7 +67,15 @@ class RentDetail extends StatelessWidget {
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
-                  fontSize: 24.0)),
+                  fontSize: 20.0)),
+        ),
+        SizedBox(height: 10.0),
+        Center(
+          child: Text("${rent.owner}",
+              style: TextStyle(
+                  color: Color(0xFF575E67),
+                  fontFamily: 'Varela',
+                  fontSize: 20.0)),
         ),
         SizedBox(height: 20.0),
         Center(

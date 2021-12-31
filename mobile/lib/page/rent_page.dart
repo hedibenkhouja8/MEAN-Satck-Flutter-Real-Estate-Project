@@ -48,7 +48,7 @@ class _RentPageState extends State<RentPage> {
   Widget waitingScreen() {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: const <Widget>[
           Text("Loading data ..."),
           Padding(padding: EdgeInsets.only(bottom: 25)),
@@ -59,61 +59,62 @@ class _RentPageState extends State<RentPage> {
   }
 
   Widget rentsList() {
-    return GridView.builder(
-        gridDelegate:
-             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+    return ListView.builder(
         itemCount: _rents.length,
         itemBuilder: (context, index) {
           Rent rent = _rents[index];
-          return  Expanded(child: Container(
-
+          return Container(
             margin: const EdgeInsets.all(2.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  cardBuild(rent)
-                ],
-              ),
-
-          ));
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[cardBuild(rent)],
+            ),
+          );
         });
   }
+
   Widget cardBuild(Rent rent) {
-    return  Card(
-
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8.0))),
-        child: InkWell(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch, // add this
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(8.0),
-                  topRight: Radius.circular(8.0),
-                ),
-                child: Image.asset(rent.image,
-                    // width: 300,
-                    height: 80,
-                    fit: BoxFit.fill),
-              ),
-              ListTile(
-                title: Text(
-                  rent.title,
-                  style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(rent.location),
-              ),
-              IconButton( icon:  Icon(Icons.info_outline),
-                  onPressed: ()  {Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) =>RentDetail(rent: rent,)));},
-
-              )
-            ],
+    return Card(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          ListTile(
+            leading: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              child: Image.asset(rent.image,
+                  width: 100, height: 150, fit: BoxFit.fill),
+            ),
+            title: Text(
+              rent.title,
+              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text("${rent.room_number} bds| ${rent.size} sqft"),
+            trailing: Text(
+              "${rent.price_per_month} £/ month",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+            ),
           ),
-        ),
-
+          ButtonTheme(
+              // make buttons use the appropriate styles for cards
+              child: ButtonBar(children: <Widget>[
+            FlatButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => RentDetail(
+                          rent: rent,
+                        )));
+              },
+              child: const Text(
+                "more Details",
+                style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
+              ),
+            )
+          ]))
+        ],
+      ),
     );
   }
 }
