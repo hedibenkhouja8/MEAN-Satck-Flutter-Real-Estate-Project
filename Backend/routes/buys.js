@@ -48,7 +48,7 @@ const upload = multer({
         }
         club.updateOne({'_id':req.body.club_id},{'$push':{'events':event}})
         .then(AddedEvent => res.json(AddedEvent));
-    });*/
+    });
     router.post('/',  function (req, res,next)  {
       var str1 = new String( "assets/images/" ); 
        console.log(req.body);
@@ -67,13 +67,13 @@ const upload = multer({
       buy.save()
       .then(() => res.status(201).json({ message: 'Buy created  !',status: 201}))
       .catch(error => res.status(400).json({ error }));
-    });
+    });*/
     
 router.get('/', buyController.all);
 router.get('/:id', buyController.get);
 //router.post('/', upload.single('image'), buyController.create);
 
-router.put('/:id',function (req, res,next) {
+/* router.put('/:id',function (req, res,next) {
   
   var str1 = new String( "assets/images/" ); 
   Buy.updateOne({ _id: req.params.id }, { 
@@ -89,6 +89,7 @@ router.put('/:id',function (req, res,next) {
     .then(() => res.status(200).json({ message: 'Buy updated !'}))
     .catch(error => res.status(400).json({ error }));
 } );
+*/
 router.delete('/:id', buyController.delete);
 
 module.exports = router;
