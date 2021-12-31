@@ -48,6 +48,8 @@ export class AboutComponent implements OnInit {
       if (res.status == 201) {
         this.formValue.reset();
         alert('Agency added successfully');
+        
+      window.location.reload();
         this.getAllAbouts();
       }
     });

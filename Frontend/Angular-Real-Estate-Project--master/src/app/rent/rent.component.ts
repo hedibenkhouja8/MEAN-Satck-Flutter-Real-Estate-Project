@@ -52,6 +52,8 @@ export class RentComponent implements OnInit {
       if (res.status == 201) {
         this.formValue.reset();
         alert('house rent added successfully');
+        
+      window.location.reload();
         this.getAllRents();
       }
     });

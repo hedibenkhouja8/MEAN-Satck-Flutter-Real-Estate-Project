@@ -48,32 +48,32 @@ const upload = multer({
         }
         club.updateOne({'_id':req.body.club_id},{'$push':{'events':event}})
         .then(AddedEvent => res.json(AddedEvent));
-    });
-    router.post('/',  function (req, res,next)  {
-      var str1 = new String( "assets/images/" ); 
-       console.log(req.body);
-      let buy = new Buy({
-        title: req.body.title,
-        owner: req.body.owner,
-        description: req.body.description,
-        image:str1.concat(req.body.image.replace(/C:\\fakepath\\/, '')) ,
-        
-        size: req.body.size,
-        room_number: req.body.room_number,
-        location: req.body.location,
-        price: req.body.price
-      });
-    buy.image.replace(/C:\\fakepath\\/, '');
-      buy.save()
-      .then(() => res.status(201).json({ message: 'Buy created  !',status: 201}))
-      .catch(error => res.status(400).json({ error }));
     });*/
     
 router.get('/', buyController.all);
 router.get('/:id', buyController.get);
 //router.post('/', upload.single('image'), buyController.create);
-
-/* router.put('/:id',function (req, res,next) {
+/*
+router.post('/',  function (req, res,next)  {
+  var str1 = new String( "assets/images/" ); 
+   console.log(req.body);
+  let buy = new Buy({
+    title: req.body.title,
+    owner: req.body.owner,
+    description: req.body.description,
+    image:str1.concat(req.body.image.replace(/C:\\fakepath\\/, '')) ,
+    
+    size: req.body.size,
+    room_number: req.body.room_number,
+    location: req.body.location,
+    price: req.body.price
+  });
+buy.image.replace(/C:\\fakepath\\/, '');
+  buy.save()
+  .then(() => res.status(201).json({ message: 'Buy created  !',status: 201}))
+  .catch(error => res.status(400).json({ error }));
+});
+ router.put('/:id',function (req, res,next) {
   
   var str1 = new String( "assets/images/" ); 
   Buy.updateOne({ _id: req.params.id }, { 
@@ -88,8 +88,8 @@ router.get('/:id', buyController.get);
     price: req.body.price, _id: req.params.id })
     .then(() => res.status(200).json({ message: 'Buy updated !'}))
     .catch(error => res.status(400).json({ error }));
-} );
-*/
+} );*/
+
 router.delete('/:id', buyController.delete);
 
 module.exports = router;
