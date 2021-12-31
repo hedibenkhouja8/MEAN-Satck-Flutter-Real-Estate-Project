@@ -29,7 +29,6 @@ class _IndexPageState extends State<IndexPage> {
     const HomePage(),
     const RentPage(),
     const BuyPage(),
-    const BuyPage(),
     const Services()
   ];
 
@@ -124,32 +123,18 @@ class _IndexPageState extends State<IndexPage> {
                               : Colors.grey,
                         ),
                       )),
-                  BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.contact_mail,
-                        color: _currentindex == 3
-                            ? const Color.fromRGBO(212, 202, 104, 1)
-                            : Colors.grey,
-                      ),
-                      title: Text(
-                        "Contact Us",
-                        style: TextStyle(
-                          color: _currentindex == 3
-                              ? const Color.fromRGBO(212, 202, 104, 1)
-                              : Colors.grey,
-                        ),
-                      )),
+
                   BottomNavigationBarItem(
                     icon: Icon(
                       Icons.settings_outlined,
-                      color: _currentindex == 4
+                      color: _currentindex == 3
                           ? const Color.fromRGBO(212, 202, 104, 1)
                           : Colors.grey,
                     ),
                     title: Text(
                       "Services",
                       style: TextStyle(
-                        color: _currentindex == 4
+                        color: _currentindex == 3
                             ? const Color.fromRGBO(212, 202, 104, 1)
                             : Colors.grey,
                       ),

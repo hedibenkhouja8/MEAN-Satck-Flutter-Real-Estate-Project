@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/main.dart';
+import 'package:mobile/page/agent_page.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/index_page.dart';
 import 'package:mobile/page/profile_page.dart';
@@ -75,14 +76,19 @@ class NavigationDrawerWidget extends StatelessWidget {
 
                   ListTile(
                     leading: const Icon(
-                      Icons.help,
+                      Icons.groups,
                       color: Colors.white,
                     ),
                     title: const Text(
-                      'About Us',
+                      'Agents',
                       style: TextStyle(color: Colors.white),
                     ),
-                    onTap: () => {},
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AgentPage()),
+                      ),
+                    },
                   ),
                   ListTile(
                     leading: const Icon(
