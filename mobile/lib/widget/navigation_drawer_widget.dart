@@ -24,6 +24,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             buildHeader(
+
               urlImage: urlImage,
               name: name,
               email: email,
@@ -49,7 +50,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                     onTap: () => {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const ProfilePage()),
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()),
                       )
                     },
                   ),
@@ -70,54 +72,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                       ),
                     },
                   ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.home_work_outlined,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Rent',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RentPage()),
-                      )
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.monetization_on_outlined,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Buy',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => BuyPage()),
-                      )
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.paste_sharp,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Services',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Services()),
-                      )
-                    },
-                  ),
+
                   ListTile(
                     leading: const Icon(
                       Icons.help,
@@ -175,27 +130,24 @@ class NavigationDrawerWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                  child:
-                Text(
-                  "made with",
-                  style: TextStyle(color: Colors.white, fontSize: 10),
-                )),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Text(
+                      "made with",
+                      style: TextStyle(color: Colors.white, fontSize: 10),
+                    )),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                  child:
-                Icon(
-                  Icons.favorite,
-                  color: Colors.white,
-                  size: 10,
-                )),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                      size: 10,
+                    )),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                  child:
-                Text(
-                  "By FindState",
-                  style: TextStyle(color: Colors.white, fontSize: 10),
-                )),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Text(
+                      "By FindState",
+                      style: TextStyle(color: Colors.white, fontSize: 10),
+                    )),
               ],
             )
           ],

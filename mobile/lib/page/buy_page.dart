@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mobile/model/buy.dart';
+import 'package:mobile/page/buy_detail.dart';
 import 'package:mobile/utils/buy_list.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -55,62 +56,64 @@ class _BuyPageState extends State<BuyPage>  {
   }
 
   Widget buysList() {
-    return GridView.builder(
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+    return ListView.builder(
+
         itemCount: _buys.length,
         itemBuilder: (context, index) {
           Buy buy = _buys[index];
-          return Card(
-           // color: Colors.pinkAccent,
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(15, 10, 10, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[     
-                               Expanded(child: Image.asset(buy.image)),
-                  const Divider(color: Colors.grey),
-                  ListTile(
-                  title: Text(
-                    buy.title,
-                    style: const TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                    ),
-                    textAlign: TextAlign.start,
-                  ),
-                  subtitle: Text(
-                    "price: ${buy.price}£",
-                    style: const TextStyle(color: Colors.grey,fontSize: 11),
-                  ),
-                    onTap:  () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              backgroundColor: Colors.white,
-                              title: Text(
-                                "${buy.title}\n"
-                                "Location : ${buy.location}\n"
-                                "Room number : ${buy.room_number}\n"
-                                "Size : ${buy.size} sqft\n"
-                                 "\n Price: ${buy.price}£",
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                    color: Colors.grey),
-                              ),
-                              content: Image.network(buy.image),
-                            );
-                          }
-                      );
-                    },
-                  ),
-                ],
-              ),
+          return Container(
+            margin: const EdgeInsets.all(2.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[cardBuild(buy)],
             ),
           );
+
         } );
   
 }
+  Widget cardBuild(Buy buy) {
+    return Card(
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(8.0))),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          ListTile(
+            leading: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+              child: Image.asset(buy.image,
+                  width: 100, height: 150, fit: BoxFit.fill),
+            ),
+            title: Text(
+              buy.title,
+              style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Text("${buy.room_number} bds| ${buy.size} sqft"),
+            trailing: Text(
+              "${buy.price} £",
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+            ),
+          ),
+          ButtonTheme(
+            // make buttons use the appropriate styles for cards
+              child: ButtonBar(children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BuyDetail(
+                          buy: buy,
+                        )));
+                  },
+                  child: const Text(
+                    "more Details",
+                    style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
+                  ),
+                )
+              ]))
+        ],
+      ),
+    );
+  }
 }
