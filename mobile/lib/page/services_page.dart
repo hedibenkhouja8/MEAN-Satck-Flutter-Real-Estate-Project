@@ -6,7 +6,7 @@ class Services extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(200),
+          preferredSize: const Size.fromHeight(300),
           child: AppBar(
             centerTitle: true,
             flexibleSpace: ClipRRect(
@@ -37,8 +37,7 @@ class Services extends StatelessWidget {
             ),
           ),
         ),
-        body: ListView(
-            children: [
+        body: ListView(children: [
           Container(
             margin: const EdgeInsets.all(5.0),
             child: Column(
@@ -50,68 +49,67 @@ class Services extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
+                    children: const <Widget>[
                       ListTile(
                         leading: Icon(
-
-                          Icons.savings_outlined,color: Color.fromRGBO(212, 202, 104, 1),),
+                          Icons.savings_outlined,
+                          color: Color.fromRGBO(212, 202, 104, 1),
+                        ),
                         title: Text(
                           "No Downpayment",
-                          style: const TextStyle(
-                            color: Color.fromRGBO(212, 202, 104, 1),
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Color.fromRGBO(212, 202, 104, 1),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        subtitle:
-                            Text(
-                                "A small river named Duden flows by their place and supplies it with the necessary regelialia."),
-
+                        subtitle: Text(
+                            "A small river named Duden flows by their place and supplies it with the necessary regelialia."),
                       ),
                       ListTile(
                         leading: Icon(
-
-                          Icons.account_balance_wallet_outlined,color: Color.fromRGBO(212, 202, 104, 1),),
+                          Icons.account_balance_wallet_outlined,
+                          color: Color.fromRGBO(212, 202, 104, 1),
+                        ),
                         title: Text(
                           "All Cash Offer",
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Color.fromRGBO(212, 202, 104, 1),
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        subtitle:
-                        Text(
+                        subtitle: Text(
                             "A small river named Duden flows by their place and supplies it with the necessary regelialia."),
-
                       ),
                       ListTile(
                         leading: Icon(
-
-                          Icons.description_outlined,color: Color.fromRGBO(212, 202, 104, 1),),
+                          Icons.description_outlined,
+                          color: Color.fromRGBO(212, 202, 104, 1),
+                        ),
                         title: Text(
                           "Experts in Your Corner",
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Color.fromRGBO(212, 202, 104, 1),
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        subtitle:
-                        Text(
+                        subtitle: Text(
                             "A small river named Duden flows by their place and supplies it with the necessary regelialia."),
-
                       ),
                       ListTile(
                         leading: Icon(
-
-                          Icons.lock_outlined,color: Color.fromRGBO(212, 202, 104, 1),),
+                          Icons.lock_outlined,
+                          color: Color.fromRGBO(212, 202, 104, 1),
+                        ),
                         title: Text(
                           "Lokced in Pricing",
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Color.fromRGBO(212, 202, 104, 1),
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        subtitle:
-                        Text(
+                        subtitle: Text(
                             "A small river named Duden flows by their place and supplies it with the necessary regelialia."),
-
                       ),
-
                     ],
                   ),
                 )
