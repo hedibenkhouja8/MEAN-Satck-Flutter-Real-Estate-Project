@@ -1,0 +1,159 @@
+{
+    "rents": [
+      {
+        "id": "1",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-1.jpg",
+        "size": 100,
+        "room_number": 5,
+        "location": "bizerte",
+        "price_per_month": 100.99,
+        "start_date_available": "21/10/2021",
+        "end_date_available": "21/12/2021"
+      },
+      {
+        "id": "2",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-2.jpg",
+        "size": 100,
+        "room_number": 4,
+        "location": "bizerte",
+        "price_per_month": 50.99,
+        "start_date_available": "21/06/2021",
+        "end_date_available": "21/03/2021"
+      },
+      {
+        "id": "3",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-3.jpg",
+        "size": 100,
+        "room_number": 6,
+        "location": "bizerte",
+        "price_per_month": 150.99,
+        "start_date_available": "30/12/2021",
+        "end_date_available": "05/01/2022"
+      },
+      {
+        "id": "4",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-4.jpg",
+        "size": 100,
+        "room_number": 5,
+        "location": "bizerte",
+        "price_per_month": 45.99,
+        "start_date_available": "15/06/2021",
+        "end_date_available": "21/09/2021"
+      },
+      {
+        "id": "5",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-5.jpg",
+        "size": 100,
+        "room_number": 5,
+        "location": "bizerte",
+        "price_per_month": 100.95,
+        "start_date_available": "07/01/2022",
+        "end_date_available": "14/03/2022"
+      },
+      {
+        "id": "6",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-6.jpg",
+        "size": 100,
+        "room_number": 5,
+        "location": "bizerte",
+        "price_per_month": 120.1,
+        "start_date_available": "21/12/2021",
+        "end_date_available": "21/01/2022"
+      },
+      {
+        "id": "8",
+        "title": "Introduction to Computer Science",
+        "owner": "malek",
+        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+        "image": "images/rent-4.jpg",
+        "size": 100,
+        "room_number": 5,
+        "location": "bizerte",
+        "price_per_month": 45.99,
+        "start_date_available": "15/06/2021",
+        "end_date_available": "21/09/2021"
+      }
+    ], "buys": [
+      
+      {
+          "id": "1",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price": 100.99
+          
+        },{
+          "id": "2",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price":  100.99
+        },{
+          "id": "3",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price":  100.99 
+        },{
+          "id": "4",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price":  100.99 
+        },{
+          "id": "5",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price":  100.99
+        },{
+          "id": "6",
+          "title": "Introduction to Computer Science",
+          "owner": "malek",
+          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+          "image": " images/rent-1.jpg",
+          "size": 100,
+          "room_number": 5,
+          "location": "bizerte",
+          "price":  100.99
+        }
+    ]
+  }

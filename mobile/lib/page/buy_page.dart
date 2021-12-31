@@ -11,7 +11,7 @@ class BuyPage extends StatefulWidget {
 }
 class _BuyPageState extends State<BuyPage>  {
   final String url =
-     'https://my-json-server.typicode.com/hedibenkhouja8/dbjson/buys';
+     'http://localhost:3000/buys';
   List<dynamic> _buys = [];
   bool loading = true;
 

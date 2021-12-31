@@ -15,8 +15,7 @@ class RentPage extends StatefulWidget {
 }
 
 class _RentPageState extends State<RentPage> {
-  final String url =
-      'https://my-json-server.typicode.com/labidimalek/public-rents-api/rents';
+  final String url ='http://localhost:3000/rents';
   List<dynamic> _rents = [];
   bool loading = true;
 
