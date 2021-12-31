@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/home_page.dart';
 import 'package:mobile/page/rent_page.dart';
+import 'package:mobile/page/services_page.dart';
 import 'package:mobile/widget/navigation_drawer_widget.dart';
 
 class App extends StatelessWidget {
@@ -27,7 +28,9 @@ class _IndexPageState extends State<IndexPage> {
   final List<Widget> _children = [
     const HomePage(),
     const RentPage(),
-    const BuyPage()
+    const BuyPage(),
+    const BuyPage(),
+    const Services()
   ];
 
   void onTappedBar(int index) {
@@ -114,7 +117,7 @@ class _IndexPageState extends State<IndexPage> {
                             : Colors.grey,
                       ),
                       title: Text(
-                        "Buy",
+                        "Sale",
                         style: TextStyle(
                           color: _currentindex == 2
                               ? const Color.fromRGBO(212, 202, 104, 1)
@@ -138,13 +141,13 @@ class _IndexPageState extends State<IndexPage> {
                       )),
                   BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.help,
+                      Icons.settings_outlined,
                       color: _currentindex == 4
                           ? const Color.fromRGBO(212, 202, 104, 1)
                           : Colors.grey,
                     ),
                     title: Text(
-                      "About",
+                      "Services",
                       style: TextStyle(
                         color: _currentindex == 4
                             ? const Color.fromRGBO(212, 202, 104, 1)

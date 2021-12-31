@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class RentDetail extends StatelessWidget {
-  final rent;
+class BuyDetail extends StatelessWidget {
+  final buy;
 
-  RentDetail(
-      {required this.rent,
-   });
+  BuyDetail(
+      {required this.buy,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class RentDetail extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: const Text('Rent House Details',
+        title: const Text('Sale House Details',
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -28,9 +28,9 @@ class RentDetail extends StatelessWidget {
       ),
       body: ListView(children: [
         const SizedBox(height: 15.0),
-         Padding(
+        Padding(
           padding: EdgeInsets.only(left: 20.0),
-          child: Text(rent.title,
+          child: Text(buy.title,
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 42.0,
@@ -38,15 +38,15 @@ class RentDetail extends StatelessWidget {
                   color: Color.fromRGBO(212, 202, 104, 1))),
         ),
         SizedBox(height: 15.0),
-       ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(10.0),
-                  topRight: Radius.circular(8.0),
-                ), child :Image.asset(rent.image,
-                height: 150.0, width: 100.0, fit: BoxFit.contain)),
+        ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(10.0),
+              topRight: Radius.circular(8.0),
+            ), child :Image.asset(buy.image,
+            height: 150.0, width: 100.0, fit: BoxFit.contain)),
         SizedBox(height: 20.0),
         Center(
-          child: Text("${rent.price_per_month}£/Month",
+          child: Text("${buy.price}£",
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 22.0,
@@ -55,7 +55,7 @@ class RentDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text(rent.location,
+          child: Text(buy.location,
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
@@ -63,25 +63,18 @@ class RentDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Text("${rent.start_date_available} to ${rent.end_date_available} ",
+          child: Text("${buy.owner} ",
               style: TextStyle(
                   color: Color(0xFF575E67),
                   fontFamily: 'Varela',
                   fontSize: 20.0)),
         ),
-        SizedBox(height: 10.0),
-        Center(
-          child: Text("${rent.owner}",
-              style: TextStyle(
-                  color: Color(0xFF575E67),
-                  fontFamily: 'Varela',
-                  fontSize: 20.0)),
-        ),
+
         SizedBox(height: 20.0),
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width - 50.0,
-            child: Text(rent.description,
+            child: Text(buy.description,
                 textAlign: TextAlign.start,
                 style: TextStyle(
                     fontFamily: 'Varela',
