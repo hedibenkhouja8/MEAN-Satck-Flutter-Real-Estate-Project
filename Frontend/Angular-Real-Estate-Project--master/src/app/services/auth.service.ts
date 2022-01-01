@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 
-import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
+import { HttpHeaders, HttpClient, HttpErrorResponse  } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
-import { Router } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 
 import { User } from 'src/app/user.model';
 
 @Injectable({
   providedIn: 'root'
-})export class AuthService {
+})
+export class AuthService {
 
   API_URL: string = 'http://localhost:3000/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   public isLoggedIn:boolean = false;
-
+  
+  currentUser: any = null;
   constructor(
     private httpClient: HttpClient,
     public router: Router,
@@ -33,17 +35,38 @@ import { User } from 'src/app/user.model';
     )
   }
 
+
+
+
   login(user: User) {
     return this.httpClient.post<any>(`${this.API_URL}/auth/login`, user)
       .subscribe((res: any) => {
-        this.isLoggedIn = true;
         this.localStorageService.set('access_token', res.token);
-        this.router.navigate(['customer/profile/' + res.userId]);
-        // this.getUserProfile(res.userId).subscribe((res) => {
-        //   this.localStorageService.set('user', {email: res.email, id: res._id, name: res.name});
-        // })
+        this.getUserProfile(res.userId).subscribe((res) => {
+          this.localStorageService.set('user', {email: res.email, id: res._id, name: res.name});
+          this.currentUser = res;
+          this.router.navigate(['home']);
+          this.reloadPage();
+        })
       })
   }
+  reloadPage() {
+    setTimeout(()=>{
+      window.location.reload();
+    }, 1);
+  }
+
+  // login(user: User) {
+  //   return this.httpClient.post<any>(`${this.API_URL}/auth/login`, user)
+  //     .subscribe((res: any) => {
+  //       this.isLoggedIn = true;
+  //       this.localStorageService.set('access_token', res.token);
+  //       this.router.navigate(['customer/profile/' + res.userId]);
+  //       // this.getUserProfile(res.userId).subscribe((res) => {
+  //       //   this.localStorageService.set('user', {email: res.email, id: res._id, name: res.name});
+  //       // })
+  //     })
+  // }
 
   getUserProfile(id: string): Observable<any> {
     return this.httpClient.get(`${this.API_URL}/auth/profile/${id}`, { headers: this.headers }).pipe(
@@ -77,7 +100,6 @@ import { User } from 'src/app/user.model';
   logout() {
     this.localStorageService.set('access_token', null);
     this.localStorageService.set('user', null);
-    this.isLoggedIn = false;
     this.router.navigate(['/']);
   }
 }

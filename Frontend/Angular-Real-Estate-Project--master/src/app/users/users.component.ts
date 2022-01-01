@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {users} from "./../users-list";
-import { Users} from "./../users.model";
+import {users} from "../respnsables-list";
+import { Users} from "../responsable.model";
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from '../services/user.service';
 @Component({

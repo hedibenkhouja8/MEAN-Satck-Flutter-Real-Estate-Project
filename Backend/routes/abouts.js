@@ -5,7 +5,7 @@ const aboutController = require('./../controllers/about')
 const About = require('./../models/About');
 router.get('/', aboutController.all);
 router.get('/:id', aboutController.get);
-/*
+
 router.post('/',  function (req, res,next)  {
     var str1 = new String( "assets/images/" ); 
      console.log(req.body);
@@ -46,7 +46,7 @@ router.post('/',  function (req, res,next)  {
             horaire: req.body.horaire,})
       .then(() => res.status(200).json({ message: 'About updated !'}))
       .catch(error => res.status(400).json({ error }));
-  } );*/
+  } );
 router.delete('/:id', aboutController.delete);
 
 module.exports = router;
