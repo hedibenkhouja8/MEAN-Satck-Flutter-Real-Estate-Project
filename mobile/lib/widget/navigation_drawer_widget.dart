@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/main.dart';
+import 'package:mobile/page/agencies_page.dart';
 import 'package:mobile/page/agent_page.dart';
 import 'package:mobile/page/buy_page.dart';
 import 'package:mobile/page/index_page.dart';
@@ -92,14 +93,19 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   ListTile(
                     leading: const Icon(
-                      Icons.contact_mail,
+                      Icons.real_estate_agent_sharp,
                       color: Colors.white,
                     ),
                     title: const Text(
-                      'Contact US',
+                      'Agencies',
                       style: TextStyle(color: Colors.white),
                     ),
-                    onTap: () => {},
+                    onTap: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AgencyPage()),
+                      ),
+                    },
                   ),
                   const Divider(color: Colors.white70),
                   ListTile(
@@ -129,6 +135,69 @@ class NavigationDrawerWidget extends StatelessWidget {
                       )
                     },
                   ),
+                  const Divider(color: Colors.white70),
+                  const SizedBox(height: 10,child: DecoratedBox(
+                    decoration: const BoxDecoration(
+                        color: Colors.white70
+                    ),
+                  ),),
+
+                  Text("Contact Us", style: TextStyle(color: Colors.white70,fontWeight: FontWeight.bold),),
+                  ListTile(
+                    leading: CircleAvatar(
+                        radius: 30,
+
+                        backgroundColor: Colors.white24,
+                        child: Icon(
+                          Icons.alternate_email_sharp,
+
+                          color: Colors.white,
+                        )),
+                    title: const Text(
+                      'findstatetunisia@ret.com',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: null,
+                  ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                child:
+                  ListTile(
+                    leading: CircleAvatar(
+                        radius: 30,
+
+                        backgroundColor: Colors.white24,
+                        child: Icon(
+                      Icons.location_on_sharp,
+
+                      color: Colors.white,
+                    )),
+                    title: const Text(
+                      'Bizerte,tunisia',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: null,
+                  )),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                child:
+                ListTile(
+                    leading: CircleAvatar(
+                        radius: 30,
+
+                        backgroundColor: Colors.white24,
+                        child: Icon(
+                          Icons.phone,
+
+                          color: Colors.white,
+                        )),
+                    title: const Text(
+                      '+216 55 387 849',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onTap: null,
+                  )),
+
                 ],
               ),
             ),
@@ -136,20 +205,20 @@ class NavigationDrawerWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Text(
                       "made with",
                       style: TextStyle(color: Colors.white, fontSize: 10),
                     )),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Icon(
                       Icons.favorite,
                       color: Colors.white,
                       size: 10,
                     )),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Text(
                       "By FindState",
                       style: TextStyle(color: Colors.white, fontSize: 10),
