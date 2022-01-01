@@ -15,7 +15,7 @@ class AgentPage extends StatefulWidget {
 }
 
 class _AgentPageState extends State<AgentPage> {
-  final String url ='http://localhost:3000/agents';
+  final String url = 'http://localhost:3000/agents';
   List<dynamic> _agents = [];
   bool loading = true;
 
@@ -40,7 +40,7 @@ class _AgentPageState extends State<AgentPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    //drawer: NavigationDrawerWidget(),
+      //drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
@@ -97,37 +97,103 @@ class _AgentPageState extends State<AgentPage> {
         children: <Widget>[
           ListTile(
             leading: Container(
-        height: 100,
-        width: 100,
-        child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-              child: Image.asset(agent.image,
-                 fit: BoxFit.fill),
-            )),
+                height: 100,
+                width: 100,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                  child: Image.asset(agent.image, fit: BoxFit.fill),
+                )),
             title: Text(
               agent.name,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             subtitle: Text("${agent.phone}"),
-
-
           ),
           ButtonTheme(
-            // make buttons use the appropriate styles for cards
+              // make buttons use the appropriate styles for cards
               child: ButtonBar(children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => RentDetail(
-                          rent: agent,
-                        )));
+            FlatButton(
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  shape: RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(20))),
+                  context: context,
+                  builder: (BuildContext context) {
+                    return DraggableScrollableSheet(
+                        initialChildSize: 0.9,
+                        minChildSize: 0.5,
+                        maxChildSize: 0.9,
+                        builder: (_, controller) => Container(
+                              padding: EdgeInsets.all(10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          'Agent Details',
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              color: Color.fromRGBO(212, 202, 104, 1)),
+                                        ),
+                                        IconButton(
+                                          icon: Icon(Icons.close),
+                                          onPressed: () =>
+                                              Navigator.pop(context),
+                                        )
+                                      ]),
+                                  Center(
+                                    child: ClipOval(
+                                      child: Image.asset(
+                                        agent.image,
+                                        fit: BoxFit.cover,
+                                        width: 104,
+                                        height: 104,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(top: 5),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.all(5),
+                                          child: Text(agent.name),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(5),
+                                          child: Text(agent.phone),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(5),
+                                          child: Text(agent.location),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.all(5),
+                                          child: Text(agent.mail),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ));
                   },
-                  child: const Text(
-                    "more Details",
-                    style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
-                  ),
-                )
-              ]))
+                );
+              },
+              child: const Text(
+                "more Details",
+                style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
+              ),
+            )
+          ]))
         ],
       ),
     );
