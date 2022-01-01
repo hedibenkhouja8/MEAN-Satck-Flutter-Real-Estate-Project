@@ -1,4 +1,4 @@
-class Agency{
+class Agency {
   final String id;
   final String owner;
   final String mail;
@@ -24,21 +24,20 @@ class Agency{
     required this.date_creation,
     required this.horaire,
   });
+
   factory Agency.fromJson(Map<String, dynamic> json) {
     return Agency(
-        id: json['id'],
-        owner: json['owner'],
+      id: json['id'],
+      owner: json['owner'],
       mail: json['mail'],
       phone: json['phone'],
       image_owner: json['image_owner'],
       location: json['location'],
       image_location: json['image_location'],
-        description: json['description'],
+      description: json['description'],
       siege_social: json['siege_social'],
       date_creation: json['date_creation'],
       horaire: json['horaire'],
-
     );
   }
-
 }
