@@ -96,13 +96,10 @@ class _AgentPageState extends State<AgentPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           ListTile(
-            leading: Container(
-                height: 100,
-                width: 100,
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                  child: Image.asset(agent.image, fit: BoxFit.fill),
-                )),
+            leading: Icon(
+              Icons.person,
+              color: Color.fromRGBO(212, 202, 104, 1),
+            ),
             title: Text(
               agent.name,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
