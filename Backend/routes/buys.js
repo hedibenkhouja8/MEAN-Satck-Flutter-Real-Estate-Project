@@ -53,7 +53,7 @@ const upload = multer({
 router.get('/', buyController.all);
 router.get('/:id', buyController.get);
 //router.post('/', upload.single('image'), buyController.create);
-/*
+
 router.post('/',  function (req, res,next)  {
   var str1 = new String( "assets/images/" ); 
    console.log(req.body);
@@ -88,7 +88,7 @@ buy.image.replace(/C:\\fakepath\\/, '');
     price: req.body.price, _id: req.params.id })
     .then(() => res.status(200).json({ message: 'Buy updated !'}))
     .catch(error => res.status(400).json({ error }));
-} );*/
+} );
 
 router.delete('/:id', buyController.delete);
 

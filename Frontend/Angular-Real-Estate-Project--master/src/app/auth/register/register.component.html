@@ -10,27 +10,42 @@
         <div class="col-md-6 text-center mb-5">
             <br> <br> 
         </div>
-    </div>
+    </div>    
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4">
             <div class="login-wrap p-0">
+              <div *ngIf="registerForm.dirty && registerForm.invalid" class="alert alert-warning alert-dismissible fade show"
+              role="alert"><p>Please fill in all fields </p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>  <div *ngIf="registerForm.controls.email.errors?.used" class="alert alert-warning alert-dismissible fade show" role="alert">
+              <p>Email already used</p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
+        <p *ngIf="registerForm.controls.email.errors?.email">Please enter a valid email</p>
+        <p *ngIf="registerForm.controls.password.errors?.minlength">A password is minimum 6 characters length</p>
+        <p *ngIf="registerForm.controls.confirm_password.errors?.NoPassswordMatch">The password confirm doesn't match
+        </p>
           <form [formGroup]="registerForm" (ngSubmit)="signupUser()">
             <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
         
-            <div class="form-group">
-              <input type="text" formControlName="name" class="form-control" id="floatingName" placeholder="Name">
+            <div class="form-group">      <input type="text" formControlName="name" class="form-control" id="floatingName" placeholder="Name*"
+              [class.is-invalid]="registerForm.dirty && registerForm.controls.name.invalid"
+              [class.is-valid]="registerForm.dirty && registerForm.controls.name.valid">
             </div>
             <div class="form-group">
-              <input type="email" formControlName="email" class="form-control" id="floatingInput"
-                placeholder="name@example.com">
+              <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="name@example.com*"
+              [class.is-invalid]="registerForm.dirty && registerForm.controls.email.invalid"
+              [class.is-valid]="registerForm.dirty && registerForm.controls.email.valid">
             </div>
-            <div class="form-group">
-              <input type="password" formControlName="password" class="form-control" id="floatingPassword"
-                placeholder="Password">
+            <div class="form-group">      <input type="password" formControlName="password" class="form-control" id="floatingPassword"
+              placeholder="Password*" [class.is-invalid]="registerForm.dirty && registerForm.controls.password.invalid"
+              [class.is-valid]="registerForm.dirty && registerForm.controls.password.valid">
             </div>
-            <div class="form-group">
-              <input type="password" formControlName="confirm_password" class="form-control" id="floatingConfirmPassword"
-                placeholder="Confirm password">
+            <div class="form-group">      <input type="password" formControlName="confirm_password" class="form-control" id="floatingConfirmPassword"
+              placeholder="Confirm password*"
+              [class.is-invalid]="registerForm.dirty && registerForm.controls.confirm_password.invalid"
+              [class.is-valid]="registerForm.dirty && registerForm.controls.confirm_password.valid">
             </div>
             <div class="form-group">
                 <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
@@ -43,9 +58,7 @@
                                 <a class="btn btn-light" routerLink="/auth/login" style="color: rgb(27, 24, 24)"> login</a>
                             </div>
             </div>
-        
         </form>
-     
       </div>
       </div>
         </div>

@@ -37,6 +37,7 @@ buymodel: buymodel = new buymodel();
     this.buyService.alla().subscribe(
       res => this.buyList = res
     );
+    console.log(this.buyList);
   }
   public addTofav(id: string):void {
     this.favService.add(id);

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 
-import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
+import { HttpHeaders, HttpClient, HttpErrorResponse  } from '@angular/common/http';
+import { Router } from "@angular/router";
 
 import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
-import { Router } from "@angular/router";
 import { LocalStorageService } from "src/app/services/local-storage.service";
 
 import { User } from 'src/app/user.model';
 
 @Injectable({
   providedIn: 'root'
-})export class AuthService {
+})
+export class AuthService {
 
   API_URL: string = 'http://localhost:3000/api';
   headers = new HttpHeaders().set('Content-Type', 'application/json');

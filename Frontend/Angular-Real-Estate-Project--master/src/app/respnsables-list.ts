@@ -1,4 +1,4 @@
-import { Users } from "./users.model";
+import { Users } from "./responsable.model";
 export const users: Users[] = [
   {
     id: '1',
