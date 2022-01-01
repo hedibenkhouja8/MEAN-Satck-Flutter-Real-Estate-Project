@@ -10,6 +10,13 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
+  
+  
+  reloadPage() {
+    setTimeout(()=>{
+      window.location.reload();
+    }, 1);
+  }
 }

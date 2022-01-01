@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: 'rent', loadChildren: () => import('./rent/rent.module').then(m => m.RentModule) },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: 'favourites', loadChildren: () => import('./favourites/favourites.module').then(m => m.FavouritesModule) },
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   {path: '**', component: NotFoundComponent}
 
