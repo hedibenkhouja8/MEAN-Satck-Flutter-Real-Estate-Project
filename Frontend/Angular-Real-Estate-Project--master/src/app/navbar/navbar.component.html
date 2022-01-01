@@ -1,44 +1,108 @@
-<nav class="
+<nav
+  class="
     navbar navbar-expand-lg navbar-dark
     ftco_navbar
     bg-dark
     ftco-navbar-light
-  " id="ftco-navbar" style="font-weight: bold">
-  <div class="container" style="display: flex; justify-content: space-between !important">
-    <a class="navbar-brand"  routerLink="/">FindState</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
+  "
+  id="ftco-navbar"
+  style="font-weight: bold"
+>
+  <div
+    class="container"
+    style="display: flex; justify-content: space-between !important"
+  >
+    <a class="navbar-brand" routerLink="/">FindState</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#ftco-nav"
+      aria-controls="ftco-nav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span><i class="bi bi-list"></i></span> Menu
     </button>
 
-    <div class="collapse navbar-collapse" id="ftco-nav" style="justify-content: flex-end">
+    <div
+      class="collapse navbar-collapse"
+      id="ftco-nav"
+      style="justify-content: flex-end"
+    >
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-          <a routerLink="/" class="nav-link"><i class="bi bi-house"></i> Home</a>
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/" class="nav-link"
+            ><i class="bi bi-house"></i> Home</a
+          >
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a routerLink="/about" class="nav-link"><i class="bi bi-geo-alt"></i> About</a>
+          <a routerLink="/about" class="nav-link"
+            ><i class="bi bi-geo-alt"></i> About</a
+          >
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a href="#" routerLink="/buy" class="nav-link"><i class="bi bi-house-fill"></i> Buy</a>
+          <a href="#" routerLink="/buy" class="nav-link"
+            ><i class="bi bi-house-fill"></i> Buy</a
+          >
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a href="#" routerLink="/rent" class="nav-link"><i class="bi bi-house-fill"></i> Rent</a>
-        </li>
-        <li class="nav-item"routerLinkActive="active">
-          <a href="#" routerLink="/favourites" class="nav-link"><i class="bi bi-suit-heart-fill"></i> Favourites</a>
-        </li>
-        <li class="nav-item"routerLinkActive="active">
-          <a href="#" routerLink="/services" class="nav-link"><i class="bi bi-gear"></i> Services</a>
-        </li>
-        <li class="nav-item"routerLinkActive="active">
-          <a href="*" routerLink="/users" class="nav-link"><i class="bi bi-people-fill"></i> Agent</a>
+          <a href="#" routerLink="/rent" class="nav-link"
+            ><i class="bi bi-house-fill"></i> Rent</a
+          >
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a href="#" routerLink="/contactus" class="nav-link"><i class="bi bi-pen"></i> Contact</a>
+          <a href="#" routerLink="/favourites" class="nav-link"
+            ><i class="bi bi-suit-heart-fill"></i> Favourites</a
+          >
         </li>
-        <li class="nav-item"routerLinkActive="active">
-          <a href="#" routerLink="/auth/login" class="nav-link"><i class="bi bi-door-open"></i> Login</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a href="#" routerLink="/services" class="nav-link"
+            ><i class="bi bi-gear"></i> Services</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a href="*" routerLink="/users" class="nav-link"
+            ><i class="bi bi-people-fill"></i> Agent</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a href="#" routerLink="/contactus" class="nav-link"
+            ><i class="bi bi-pen"></i> Contact</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a href="#" routerLink="/auth/login" class="nav-link"
+            ><i class="bi bi-door-open"></i> Login</a
+          >
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a 
+          *ngIf="currentUser"
+            class="nav-link text-decoration-none text-light dropdown-toggle"
+            href="#"
+            id="dropdown03"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="color: black!important;"
+            >{{currentUser.name}}</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown03" style="margin-left: 87%;margin-top: -11px;">
+            <li>
+              <a class="dropdown-item" [routerLink]="'/customer/profile/'+currentUser.id"
+                ><i class="bi bi-person-fill"></i> Profile</a
+              >
+            </li>
+            
+              <li>
+                <div class="dropdown-item" (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</div>
+              </li>
+             
+            
+          </ul>
         </li>
       </ul>
     </div>
