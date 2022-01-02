@@ -1,236 +1,249 @@
 {
-    "rents": [
-      {
-        "id": "1",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price_per_month": 100.99,
-        "start_date_available": "21/10/2021",
-        "end_date_available": "21/12/2021"
-      },
-      {
-        "id": "2",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-2.jpg",
-        "size": 100,
-        "room_number": 4,
-        "location": "bizerte",
-        "price_per_month": 50.99,
-        "start_date_available": "21/06/2021",
-        "end_date_available": "21/03/2021"
-      },
-      {
-        "id": "3",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-3.jpg",
-        "size": 100,
-        "room_number": 6,
-        "location": "bizerte",
-        "price_per_month": 150.99,
-        "start_date_available": "30/12/2021",
-        "end_date_available": "05/01/2022"
-      },
-      {
-        "id": "4",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-4.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price_per_month": 45.99,
-        "start_date_available": "15/06/2021",
-        "end_date_available": "21/09/2021"
-      },
-      {
-        "id": "5",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-5.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price_per_month": 100.95,
-        "start_date_available": "07/01/2022",
-        "end_date_available": "14/03/2022"
-      },
-      {
-        "id": "6",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-6.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price_per_month": 120.1,
-        "start_date_available": "21/12/2021",
-        "end_date_available": "21/01/2022"
-      },
-      {
-        "id": "8",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "images/rent-4.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price_per_month": 45.99,
-        "start_date_available": "15/06/2021",
-        "end_date_available": "21/09/2021"
-      }
-    ], "buys": [
-      
-      {
-          "id": "1",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price": 100.99
-          
-        },{
-          "id": "2",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price":  100.99
-        },{
-          "id": "3",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price":  100.99 
-        },{
-          "id": "4",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price":  100.99 
-        },{
-          "id": "5",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price":  100.99
-        },{
-          "id": "6",
-          "title": "Introduction to Computer Science",
-          "owner": "malek",
-          "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-          "image": "images/rent-1.jpg",
-          "size": 100,
-          "room_number": 5,
-          "location": "bizerte",
-          "price":  100.99
-        }
-    ],
-    "agencies":[
+  "rents": [
+    {
+      "id": "1",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": 100,
+      "room_number": 5,
+      "location": "bizerte",
+      "price_per_month": 100.99,
+      "start_date_available": "21/10/2021",
+      "end_date_available": "21/12/2021"
+    },
+    {
+      "id": "2",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-2.jpg",
+      "size": 100,
+      "room_number": 4,
+      "location": "bizerte",
+      "price_per_month": 50.99,
+      "start_date_available": "21/06/2021",
+      "end_date_available": "21/03/2021"
+    },
+    {
+      "id": "3",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-3.jpg",
+      "size": 100,
+      "room_number": 6,
+      "location": "bizerte",
+      "price_per_month": 150.99,
+      "start_date_available": "30/12/2021",
+      "end_date_available": "05/01/2022"
+    },
+    {
+      "id": "4",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-4.jpg",
+      "size": 100,
+      "room_number": 5,
+      "location": "bizerte",
+      "price_per_month": 45.99,
+      "start_date_available": "15/06/2021",
+      "end_date_available": "21/09/2021"
+    },
+    {
+      "id": "5",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-5.jpg",
+      "size": 100,
+      "room_number": 5,
+      "location": "bizerte",
+      "price_per_month": 100.95,
+      "start_date_available": "07/01/2022",
+      "end_date_available": "14/03/2022"
+    },
+    {
+      "id": "6",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-6.jpg",
+      "size": 100,
+      "room_number": 5,
+      "location": "bizerte",
+      "price_per_month": 120.1,
+      "start_date_available": "21/12/2021",
+      "end_date_available": "21/01/2022"
+    },
+    {
+      "id": "8",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-4.jpg",
+      "size": 100,
+      "room_number": 5,
+      "location": "bizerte",
+      "price_per_month": 45.99,
+      "start_date_available": "15/06/2021",
+      "end_date_available": "21/09/2021"
+    }
+  ],
+  "buys": [
+    {
+      "id": "1",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": "100",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "100.99"
+    },
+    {
+      "id": "2",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": "100",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "100.99"
+    },
+    {
+      "id": "3",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": "100",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "100.99"
+    },
+    {
+      "id": "4",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": "100",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "100.99"
+    },
+    {
+      "id": "6",
+      "title": "Introduction to Computer Science",
+      "owner": "malek",
+      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
+      "image": "images/rent-1.jpg",
+      "size": "100",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "100.99"
+    },
+    {
+      "id": "7",
+      "title": "fff",
+      "owner": "ddd",
+      "description": "ddd",
+      "image": "images/rent-1.jpg",
+      "size": "123",
+      "room_number": "123",
+      "location": "13",
+      "price": "13"
+    },
+    {
+      "title": "test",
+      "owner": "oussama",
+      "description": "sssssssss",
+      "image": "images/rent-1.jpg",
+      "size": "50",
+      "room_number": "5",
+      "location": "bizerte",
+      "price": "200",
+      "id": "oBKGrhR"
+    }
+  ],
+  "agencies": [
     {
       "id": "1",
       "owner": "oussama abid",
       "mail": "oussama@gmail.com",
       "phone": "+21687654321",
-      "image_owner": "images/oussama.jpg", 
+      "image_owner": "images/oussama.jpg",
       "location": "Bizerte",
-      "image_location":"images/Vieux_Port_Bizerte.jpg",
+      "image_location": "images/Vieux_Port_Bizerte.jpg",
       "description": "Bizerte Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
       "siege_social": "Angle Rues 1 Mai / Med Ali Tour Bureaux Bizerte Center 7000 Bizerte –Tunisie",
-      "date_creation":"25/09/2020",
-      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
+      "date_creation": "25/09/2020",
+      "horaire": "8:00 - 12:00 / 14:00 - 18:00"
     },
     {
       "id": "2",
       "owner": "youssef farhat",
       "mail": "youssef@gmail.com",
       "phone": "+21655387849",
-      "image_owner": "images/youssef.jpg", 
+      "image_owner": "images/youssef.jpg",
       "location": "Tunis",
-      "image_location":"images/tn.jpg",
+      "image_location": "images/tn.jpg",
       "description": "Tunis Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
       "siege_social": "44 Route de la Marsa Km 9 / 2045 El Aouina",
-      "date_creation":"25/09/2021",
-      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
-      
+      "date_creation": "25/09/2021",
+      "horaire": "8:00 - 12:00 / 14:00 - 18:00"
     },
     {
       "id": "3",
       "owner": "melek labidi",
       "mail": "melek@gmail.com",
       "phone": "+21621436587",
-      "image_owner": "images/melek.jpg", 
+      "image_owner": "images/melek.jpg",
       "location": "Nabeul",
-      "image_location":"images/nb.jpg",
+      "image_location": "images/nb.jpg",
       "description": "Nabeul Findstate est une entreprise qui gère les transactions immobilières de ses clients, de la mise en vente de biens à la gestion locative, en passant par l’estimation ou la recherche de biens. Ses collaborateurs sont généralement des agents immobiliers ou des agents commerciaux. L’agence immobilière fait le lien entre les offreurs de biens (vendeurs) et les demandeurs de biens (les acheteurs ou les locataires).",
       "siege_social": " 144 Avenue Habib Thameur Nabeul Tunisie",
-      "date_creation":"27/11/2021",
-      "horaire":"8:00 - 12:00 / 14:00 - 18:00"
+      "date_creation": "27/11/2021",
+      "horaire": "8:00 - 12:00 / 14:00 - 18:00"
     }
-    ],
-    "agents": [
-{
+  ],
+  "agents": [
+    {
       "id": "1",
       "name": "oussama abid",
       "mail": "oussama@gmail.com",
       "phone": "+21687654321",
-      "image": "images/oussama.jpg", 
+      "image": "images/oussama.jpg",
       "location": "bizerte"
-    
-      
-    },{
-        "id": "2",
-        "name": "Hedi ben khouja",
-        "mail": "Hedi@gmail.com",
-        "phone": "+21612345678",
-        "image": "images/hedi.jpg", 
-        "location": "bizerte"
-      
-    },{
+    },
+    {
+      "id": "2",
+      "name": "Hedi ben khouja",
+      "mail": "Hedi@gmail.com",
+      "phone": "+21612345678",
+      "image": "images/hedi.jpg",
+      "location": "bizerte"
+    },
+    {
       "id": "3",
       "name": "youssef farhat",
       "mail": "youssef@gmail.com",
       "phone": "+21678563412",
-      "image": "images/youssef.jpg", 
+      "image": "images/youssef.jpg",
       "location": "tunis"
-    },{
+    },
+    {
       "id": "4",
       "name": "melek labidi",
       "mail": "melek@gmail.com",
       "phone": "+21621436587",
-      "image": "images/melek.jpg", 
+      "image": "images/melek.jpg",
       "location": "bizerte"
     }
-    ]
-
-  }
+  ]
+}
