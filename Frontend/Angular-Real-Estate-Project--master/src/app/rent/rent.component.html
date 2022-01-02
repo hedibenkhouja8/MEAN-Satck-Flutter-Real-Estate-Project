@@ -43,61 +43,92 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <div *ngIf="formValue.dirty && formValue.invalid" class="alert alert-danger alert-dismissible fade show"
+        role="alert"> 
+      <p *ngIf="formValue.controls.title.errors?.required">The title is required</p>
+      <p *ngIf="formValue.controls.owner.errors?.required">The owner name is required</p>
+      <p *ngIf="formValue.controls.description.errors?.required">The description is required</p>
+      <p *ngIf="formValue.controls.image.errors?.required">The image is required</p>
+      <p *ngIf="formValue.controls.size.errors?.required">The size is required</p>
+      <p *ngIf="formValue.controls.room_number.errors?.required">The room number is required</p>
+      <p *ngIf="formValue.controls.location.errors?.required">The location is required</p>
+      <p *ngIf="formValue.controls.price_per_month.errors?.required">The price per month is required</p>
+      <p *ngIf="formValue.controls.start_date_available.errors?.required">The start date available is required</p>
+      <p *ngIf="formValue.controls.end_date_available.errors?.required">The end date available is required</p>
+
+    
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
         <form [formGroup]="formValue"(ngSubmit)="addRent()" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required
-              formControlName="title" />
+            <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="title"
+            [class.is-invalid]="formValue.dirty && formValue.controls.title.invalid"
+          [class.is-valid]="formValue.dirty && formValue.controls.title.valid">
           </div>
-
+          
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name Owner</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="owner" required
-              aria-describedby="emailHelp" />
-          </div>
-
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="owner" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.owner.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.owner.valid">
+            </div>
+            
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Description</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="description" required
-              aria-describedby="emailHelp" />
-          </div>
-
+            <input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="description" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.description.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.description.valid">
+            </div>
+            
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Image</label>
-            <input type="file" accept="image/png, image/jpeg" class="form-control" id="exampleInputEmail1" name="image" required
-              formControlName="image" aria-describedby="emailHelp" />
-          </div>
-
+            <input required type="file" 
+            accept="image/png, image/jpeg" class="form-control" id="exampleInput1"  name ="file" formControlName="image" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.image.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.image.valid">
+            </div>
+            
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Size</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="size" required
-              aria-describedby="emailHelp" />
-          </div>
-
+            <input  required type="number" class="form-control" id="exampleInputEmail1"  formControlName="size" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.size.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.size.valid">
+            </div>
+            
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Room Number</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" formControlName="room_number" required
-              aria-describedby="emailHelp" />
-          </div>
-          <div class="mb-3">
+            <input required type="number" class="form-control" id="exampleInputEmail1"  formControlName="room_number" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.room_number.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.room_number.valid">
+            </div>
+            <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Location</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="location" required
-              aria-describedby="emailHelp" />
-          </div>
+            <input required type="text" class="form-control" id="exampleInputEmail1"   formControlName="location" aria-describedby="emailHelp"
+            [class.is-invalid]="formValue.dirty && formValue.controls.location.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.location.valid">
+            </div>
+          
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Price per month</label>
             <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month" required
-              aria-describedby="emailHelp" />
+              aria-describedby="emailHelp" 
+              [class.is-invalid]="formValue.dirty && formValue.controls.price_per_month.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.price_per_month.valid"/>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
             <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available" required
-              aria-describedby="emailHelp" />
+              aria-describedby="emailHelp" 
+              [class.is-invalid]="formValue.dirty && formValue.controls.start_date_available.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.start_date_available.valid"/>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
             <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available" required
-              aria-describedby="emailHelp" />
+              aria-describedby="emailHelp" 
+              [class.is-invalid]="formValue.dirty && formValue.controls.end_date_available.invalid"
+            [class.is-valid]="formValue.dirty && formValue.controls.end_date_available.valid"/>
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">
              add

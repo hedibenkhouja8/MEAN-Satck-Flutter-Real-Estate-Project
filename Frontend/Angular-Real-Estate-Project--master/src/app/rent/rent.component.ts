@@ -5,7 +5,8 @@ import { rentmodel } from './rentmodel.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { FavRentService } from 'src/app/services/fav-rent.service';
 import { RentService } from '../services/rent.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-rent',
@@ -24,16 +25,16 @@ export class RentComponent implements OnInit {
     public router: Router
   ) {
     this.formValue = this.formBuilder.group({
-      title: [''],
-      owner: [''],
-      description: [''],
-      image: [''],
-      size: [''],
-      room_number: [''],
-      location: [''],
-      price_per_month: [''],
-      start_date_available: [''],
-      end_date_available: [''],
+      title: ['',Validators.required],
+      owner: ['',Validators.required],
+      description: ['',Validators.required],
+      image: ['',Validators.required],
+      size: ['',Validators.required],
+      room_number: ['',Validators.required],
+      location: ['',Validators.required],
+      price_per_month: ['',Validators.required],
+      start_date_available: ['',Validators.required],
+      end_date_available: ['',Validators.required],
     });
   }
 
