@@ -33,140 +33,158 @@
       <div class="col-md-12 heading-section text-center ftco-animate mb-5">
         <span class="subheading">What we offer</span>
         <h2 class="mb-2">Exclusive Offer For You</h2>
-        
+
         <h3 class="mb-2">Houses For Sale</h3>
       </div>
     </div>
-                      
+
     <section class="ftco-section goto-here">
-    	<div class="container">
+      <div class="container">
         <div class="row">
-        	<div class="col-md-4"  *ngFor="let buy of buyList.slice(0, 3) ">
-        		<div class="property-wrap ftco-animate">
-        			<div class="img d-flex align-items-center justify-content-center" style="background-image: url({{buy.image}});">
-        			
-        				<div class="list-agent d-flex align-items-center">
-        					<a href="#" class="agent-info d-flex align-items-center">
-        						<div class="img-2 rounded-circle" style="background-image: url(assets/images/person_2.jpg);"></div>
-        						<h3 class="mb-0 ml-2"></h3>
+          <div class="col-md-4" *ngFor="let buy of buyList.slice(0, 3)">
+            <div class="property-wrap ftco-animate">
+              <div class="img d-flex align-items-center justify-content-center"
+                style="background-image: url({{buy.image}});">
+                <div class="list-agent d-flex align-items-center">
+                  <a href="#" class="agent-info d-flex align-items-center">
+                    <div class="img-2 rounded-circle" style="background-image: url(assets/images/person_2.jpg)"></div>
+                    <h3 class="mb-0 ml-2"></h3>
+                  </a>
 
-        					</a>
-
-        					<div class="tooltip-wrap d-flex">
-        						<a href="#" class="icon-2 d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="top" title="Bookmark">
-        							<span class="ion-ios-heart"><i class="sr-only">Bookmark</i></span>
-        						</a>
-        						<a href="#" class="icon-2 d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="top" title="Compare">
-        							<span class="ion-ios-eye"><i class="sr-only">Compare</i></span>
-        						</a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="text">
-
-
-
-
-        				<p class="price mb-3"><span class="orig-price">{{ buy.price }}</span></p>
-        				<h3 class="mb-0"><a routerLink="/buy/description">{{ buy.owner }}</a></h3>
-        				<span class="location d-inline-block mb-3"><i class="bi bi-geo-alt-fill"></i>{{buy.location}}</span>
-        				<ul class="property_list">
-        					<li><i class="bi bi-door-closed-fill"></i>{{buy.room_number}}</li>
-        					<li><i class="bi bi-building"></i>{{ buy.size }}sqft</li>
-
-        				</ul>
-				 <!-- Modal update -->
-			<div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">
-					Update a new House for sale
-				  </h5>
-				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-		
-			
-			  </div>
-			</div>
-			</div>
-								</div>
-        		</div>
-        	</div>
-
-		</div>
-		</div>
-	</section>
-    
-   
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-        
-        <h3 class="mb-2">Houses For Rent</h3>
+                  <div class="tooltip-wrap d-flex">
+                    <a href="#" class="
+                        icon-2
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                      " data-toggle="tooltip" data-placement="top" title="Bookmark">
+                      <span class="ion-ios-heart"><i class="sr-only">Bookmark</i></span>
+                    </a>
+                    <a href="#" class="
+                        icon-2
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                      " data-toggle="tooltip" data-placement="top" title="Compare">
+                      <span class="ion-ios-eye"><i class="sr-only">Compare</i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="text">
+                <p class="price mb-3">
+                  <span class="orig-price">{{ buy.price }}</span>
+                </p>
+                <h3 class="mb-0">
+                  <a routerLink="/buy/description">{{ buy.owner }}</a>
+                </h3>
+                <span class="location d-inline-block mb-3"><i class="bi bi-geo-alt-fill"></i>{{ buy.location }}</span>
+                <ul class="property_list">
+                  <li>
+                    <i class="bi bi-door-closed-fill"></i>{{ buy.room_number }}
+                  </li>
+                  <li><i class="bi bi-building"></i>{{ buy.size }}sqft</li>
+                </ul>
+                <!-- Modal update -->
+                <div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Update a new House for sale
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          <h3 class="mb-2">Houses For Rent</h3>
+        </div>
+      </div>
+
+      <section class="ftco-section goto-here">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let rent of rentList.slice(0, 3)">
+              <div class="property-wrap ftco-animate">
+                <div class="img d-flex align-items-center justify-content-center"
+                  style="background-image: url({{rent.image}});">
+                  <div class="list-agent d-flex align-items-center">
+                    <a href="#" class="agent-info d-flex align-items-center">
+                      <div class="img-2 rounded-circle" style="
+                          background-image: url(assets/images/person_2.jpg);
+                        "></div>
+                      <h3 class="mb-0 ml-2"></h3>
+                    </a>
+
+                    <div class="tooltip-wrap d-flex">
+                      <a href="#" class="
+                          icon-2
+                          d-flex
+                          align-items-center
+                          justify-content-center
+                        " data-toggle="tooltip" data-placement="top" title="Bookmark">
+                        <span class="ion-ios-heart"><i class="sr-only">Bookmark</i></span>
+                      </a>
+                      <a href="#" class="
+                          icon-2
+                          d-flex
+                          align-items-center
+                          justify-content-center
+                        " data-toggle="tooltip" data-placement="top" title="Compare">
+                        <span class="ion-ios-eye"><i class="sr-only">Compare</i></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <p class="price mb-3">
+                    <span class="orig-price">{{
+                      rent.price | currency: "EUR"
+                      }}</span>
+                  </p>
+                  <h3 class="mb-0">
+                    <a routerLink="/rent/description">{{ rent.owner }}</a>
+                  </h3>
+                  <span class="location d-inline-block mb-3"><i class="bi bi-geo-alt-fill"></i>{{ rent.location
+                    }}</span>
+                  <ul class="property_list">
+                    <li>
+                      <i class="bi bi-door-closed-fill"></i>{{ rent.room_number }}
+                    </li>
+                    <li><i class="bi bi-building"></i>{{ rent.size }}sqft</li>
+                  </ul>
+                  <!-- Modal update -->
+                  <div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Update a new House for sale
+                          </h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-                      
-    <section class="ftco-section goto-here">
-    	<div class="container">
-        <div class="row">
-        	<div class="col-md-4"  *ngFor="let rent of rentList.slice(0, 3) ">
-        		<div class="property-wrap ftco-animate">
-        			<div class="img d-flex align-items-center justify-content-center" style="background-image: url({{rent.image}});">
-        			
-        				<div class="list-agent d-flex align-items-center">
-        					<a href="#" class="agent-info d-flex align-items-center">
-        						<div class="img-2 rounded-circle" style="background-image: url(assets/images/person_2.jpg);"></div>
-        						<h3 class="mb-0 ml-2"></h3>
-
-        					</a>
-
-        					<div class="tooltip-wrap d-flex">
-        						<a href="#" class="icon-2 d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="top" title="Bookmark">
-        							<span class="ion-ios-heart"><i class="sr-only">Bookmark</i></span>
-        						</a>
-        						<a href="#" class="icon-2 d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="top" title="Compare">
-        							<span class="ion-ios-eye"><i class="sr-only">Compare</i></span>
-        						</a>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="text">
-
-
-
-
-        				<p class="price mb-3"><span class="orig-price">{{ rent.price }}</span></p>
-        				<h3 class="mb-0"><a routerLink="/rent/description">{{ rent.owner }}</a></h3>
-        				<span class="location d-inline-block mb-3"><i class="bi bi-geo-alt-fill"></i>{{rent.location}}</span>
-        				<ul class="property_list">
-        					<li><i class="bi bi-door-closed-fill"></i>{{rent.room_number}}</li>
-        					<li><i class="bi bi-building"></i>{{ rent.size }}sqft</li>
-
-        				</ul>
-				 <!-- Modal update -->
-			<div class="modal fade bd-example-modal-xl" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <h5 class="modal-title" id="exampleModalLabel">
-					Update a new House for sale
-				  </h5>
-				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-		
-			
-			  </div>
-			</div>
-			</div>
-								</div>
-        		</div>
-        	</div>
-
-		</div>
-		</div>
-	</section>
-    
   </div>
+</section>

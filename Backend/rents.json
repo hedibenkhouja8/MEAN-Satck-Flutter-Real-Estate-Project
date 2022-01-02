@@ -1,11 +1,10 @@
-{
-  "rents": [
+ [
     {
       "id": "1",
-      "title": "Introduction to Computer Science",
+      "title": "London house",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-1.jpg",
+      "description": "This beautiful, spacious and bright 3 Bedroom and 2 Bathroom house for rent is located at 1366 Bizerte Street, Bizerte, LA. With an open floor plan and spacious kitchen, you'll find it difficult to find a nicer home at this price! The living room features a large window and a fireplace perfect for those chilly winter evenings. The master bedroom is spacious with bath, walk-in closet and television hook-up. The master bathroom has dual sinks and a separate toilet area as well as a large shower with bench and plenty of storage. There is also a half bath on the first floor. This home includes an attached carport and an extra deep driveway for parking extra vehicles. Contact us now to book a viewing!",
+      "image": "assets/images/rent-1.jpg",
       "size": 100,
       "room_number": 5,
       "location": "bizerte",
@@ -15,10 +14,10 @@
     },
     {
       "id": "2",
-      "title": "Introduction to Computer Science",
+      "title": "villa holiday",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-2.jpg",
+      "description": "The perfect house for one! This generously sized 100 square foot empty space has everything you need all the way down to the kitchen sink. Choose from 1 bedrooms and 3 bathrooms and it can be yours to rent. Contact us for a viewing today!",
+      "image": "assets/images/rent-2.jpg",
       "size": 100,
       "room_number": 4,
       "location": "bizerte",
@@ -28,10 +27,10 @@
     },
     {
       "id": "3",
-      "title": "Introduction to Computer Science",
+      "title": "the starling",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-3.jpg",
+      "description": "Breathtaking walk-out triplex located in desirable Waterloo. The 2500 square foot home features 4 bedrooms and 3 bathrooms, with plenty of room to grow. The bedrooms are all large, with 2 on the main floor and 2 upstairs. The main floor features a spacious living space with a gas fireplace, large kitchen with plenty of cupboards and storage, and a deck overlooking the back yard. There is also a one bedroom basement suite that is currently rented for $1100 per month. The exterior has been well maintained and includes a detached garage, concrete patio, and private back yard. This home is perfect for an owner occupied family or an investor looking for a great investment opportunity. It is located in a great neighbourhood close to schools, parks, community center and shopping areas.",
+      "image": "assets/images/rent-3.jpg",
       "size": 100,
       "room_number": 6,
       "location": "bizerte",
@@ -41,10 +40,10 @@
     },
     {
       "id": "4",
-      "title": "Introduction to Computer Science",
+      "title": "Luxury Housetel",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-4.jpg",
+      "description": "The perfect house for one! This generously sized 100 square foot empty space has everything you need all the way down to the kitchen sink. Choose from 1 bedrooms and 3 bathrooms and it can be yours to rent. Contact us for a viewing today!",
+      "image": "assets/images/rent-4.jpg",
       "size": 100,
       "room_number": 5,
       "location": "bizerte",
@@ -54,10 +53,10 @@
     },
     {
       "id": "5",
-      "title": "Introduction to Computer Science",
+      "title": "Villa d'Espagne",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-5.jpg",
+      "description": "This beautiful, spacious and bright 3 Bedroom and 2 Bathroom house for rent is located at 1366 Bizerte Street, Bizerte, LA. With an open floor plan and spacious kitchen, you'll find it difficult to find a nicer home at this price! The living room features a large window and a fireplace perfect for those chilly winter evenings. The master bedroom is spacious with bath, walk-in closet and television hook-up. The master bathroom has dual sinks and a separate toilet area as well as a large shower with bench and plenty of storage. There is also a half bath on the first floor. This home includes an attached carport and an extra deep driveway for parking extra vehicles. Contact us now to book a viewing!",
+      "image": "assets/images/rent-5.jpg",
       "size": 100,
       "room_number": 5,
       "location": "bizerte",
@@ -67,10 +66,10 @@
     },
     {
       "id": "6",
-      "title": "Introduction to Computer Science",
+      "title": "Casa Vacaciolo",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-6.jpg",
+      "description": "Breathtaking walk-out triplex located in desirable Waterloo. The 2500 square foot home features 4 bedrooms and 3 bathrooms, with plenty of room to grow. The bedrooms are all large, with 2 on the main floor and 2 upstairs. The main floor features a spacious living space with a gas fireplace, large kitchen with plenty of cupboards and storage, and a deck overlooking the back yard. There is also a one bedroom basement suite that is currently rented for $1100 per month. The exterior has been well maintained and includes a detached garage, concrete patio, and private back yard. This home is perfect for an owner occupied family or an investor looking for a great investment opportunity. It is located in a great neighbourhood close to schools, parks, community center and shopping areas.",
+      "image": "assets/images/rent-6.jpg",
       "size": 100,
       "room_number": 5,
       "location": "bizerte",
@@ -80,10 +79,10 @@
     },
     {
       "id": "8",
-      "title": "Introduction to Computer Science",
+      "title": "Home Villa Resort",
       "owner": "malek",
-      "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-      "image": "images/rent-4.jpg",
+      "description": "The perfect house for one! This generously sized 100 square foot empty space has everything you need all the way down to the kitchen sink. Choose from 1 bedrooms and 3 bathrooms and it can be yours to rent. Contact us for a viewing today!",
+      "image": "assets/images/rent-4.jpg",
       "size": 100,
       "room_number": 5,
       "location": "bizerte",
@@ -91,69 +90,4 @@
       "start_date_available": "15/06/2021",
       "end_date_available": "21/09/2021"
     }
-  ], "buys": [
-    
-    {
-        "id": "1",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99"
-        
-      },{
-        "id": "2",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99"
-      },{
-        "id": "3",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99" 
-      },{
-        "id": "4",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99" 
-      },{
-        "id": "5",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99"
-      },{
-        "id": "6",
-        "title": "Introduction to Computer Science",
-        "owner": "malek",
-        "description": "This course introduces students to the basic concepts of computer science. It covers the basic programming concepts, data structures, and algorithms, and introduces students to the software development process. Students will learn to use a programming language, and to write algorithms in a programming language. This course is a prerequisite for the CS program.",
-        "image": "assets/images/rent-1.jpg",
-        "size": 100,
-        "room_number": 5,
-        "location": "bizerte",
-        "price": "100.99"
-      }
   ]
-}
