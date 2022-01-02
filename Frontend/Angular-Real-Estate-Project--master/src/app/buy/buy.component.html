@@ -30,7 +30,16 @@
 		</div>
 		<div class="modal-body">
 			<div *ngIf="formValue.dirty && formValue.invalid" class="alert alert-danger alert-dismissible fade show"
-    role="alert"><p>Please fill in all fields </p>
+    role="alert"> 
+	<p *ngIf="formValue.controls.title.errors?.required">The title is required</p>
+	<p *ngIf="formValue.controls.owner.errors?.required">The owner name is required</p>
+	<p *ngIf="formValue.controls.description.errors?.required">The description is required</p>
+	<p *ngIf="formValue.controls.image.errors?.required">The image is required</p>
+	<p *ngIf="formValue.controls.size.errors?.required">The size is required</p>
+	<p *ngIf="formValue.controls.room_number.errors?.required">The room number is required</p>
+	<p *ngIf="formValue.controls.location.errors?.required">The location is required</p>
+	<p *ngIf="formValue.controls.price.errors?.required">The price is required</p>
+
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 			<form [formGroup]="formValue"(ngSubmit)="addbuy()"  enctype="multipart/form-data" >
@@ -80,13 +89,13 @@
 					<label for="exampleInputEmail1" class="form-label">Location</label>
 					<input required type="text" class="form-control" id="exampleInputEmail1"   formControlName="location" aria-describedby="emailHelp"
 					[class.is-invalid]="formValue.dirty && formValue.controls.location.invalid"
-					[class.is-valid]="formValue.dirty && formValue.controls.locationvalid">
+					[class.is-valid]="formValue.dirty && formValue.controls.location.valid">
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleInputEmail1" class="form-label">Price</label>
 					<input required type="number" class="form-control" id="exampleInputEmail1"  formControlName="price" aria-describedby="emailHelp"
 					[class.is-invalid]="formValue.dirty && formValue.controls.price.invalid"
-					[class.is-valid]="formValue.dirty && formValue.controls.Price.valid">
+					[class.is-valid]="formValue.dirty && formValue.controls.price.valid">
 				  </div>
 				  <button required class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Save changes</button>
 			
