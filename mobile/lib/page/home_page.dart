@@ -25,6 +25,18 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController size = TextEditingController();
   final TextEditingController room_number = TextEditingController();
   final TextEditingController price = TextEditingController();
+  final GlobalKey<FormState> _formKey1 = GlobalKey<FormState>();
+
+  final TextEditingController title1 = TextEditingController();
+  final TextEditingController owner1 = TextEditingController();
+  final TextEditingController description1 = TextEditingController();
+  final TextEditingController location1 = TextEditingController();
+  final TextEditingController image1 = TextEditingController();
+  final TextEditingController size1 = TextEditingController();
+  final TextEditingController room_number1 = TextEditingController();
+  final TextEditingController price_per_month = TextEditingController();
+  final TextEditingController start_date_available = TextEditingController();
+  final TextEditingController end_date_available = TextEditingController();
 
   get itemCount => null;
   bool circular = false;
@@ -121,6 +133,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter Title'),
+                                        controller: title1,
                                         keyboardType: TextInputType.text,
                                       )),
                                   Padding(
@@ -133,6 +146,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter owner'),
+                                        controller: owner1,
                                         keyboardType: TextInputType.text,
                                       )),
                                   Padding(
@@ -145,6 +159,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter Description'),
+                                        controller: description1,
                                         keyboardType: TextInputType.text,
                                       )),
                                   Padding(
@@ -157,6 +172,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter Size'),
+                                        controller: size1,
                                         keyboardType: TextInputType.number,
                                       )),
                                   Padding(
@@ -169,6 +185,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter Room Number'),
+                                        controller: room_number1,
                                         keyboardType: TextInputType.number,
                                       )),
                                   Padding(
@@ -181,6 +198,7 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(50)),
                                             hintText: 'Enter Location'),
+                                        controller: location1,
                                         keyboardType: TextInputType.text,
                                       )),
                                   Padding(
@@ -198,6 +216,7 @@ class _HomePageState extends State<HomePage> {
                                                     BorderRadius.circular(50)),
                                             hintText:
                                                 'Enter Start Date Available'),
+                                        controller: start_date_available,
                                         keyboardType: TextInputType.datetime,
                                       )),
                                   Padding(
@@ -215,6 +234,24 @@ class _HomePageState extends State<HomePage> {
                                                     BorderRadius.circular(50)),
                                             hintText:
                                                 'Enter End Date Available'),
+                                        controller: end_date_available,
+                                        keyboardType: TextInputType.datetime,
+                                      )),
+                                  Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 10),
+                                      child: TextFormField(
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            suffixIcon: const Icon(
+                                              Icons.date_range,
+                                              size: 20.0,
+                                            ),
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50)),
+                                            hintText: 'Enter price per month '),
+                                        controller: price_per_month,
                                         keyboardType: TextInputType.datetime,
                                       )),
                                   const Divider(
@@ -234,7 +271,20 @@ class _HomePageState extends State<HomePage> {
                                     primary:
                                         const Color.fromRGBO(212, 202, 104, 1),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    addrent(
+                                        context,
+                                        title1.text,
+                                        owner1.text,
+                                        description1.text,
+                                        'images/rent-5.jpg',
+                                        size1.text,
+                                        room_number1.text,
+                                        location1.text,
+                                        start_date_available.text,
+                                        end_date_available.text,
+                                        price_per_month.text);
+                                  },
                                   child: const Text("Add"),
                                 ),
                               )
@@ -419,7 +469,7 @@ class _HomePageState extends State<HomePage> {
                                       const Color.fromRGBO(212, 202, 104, 1),
                                 ),
                                 onPressed: () {
-                                  addFlight(
+                                  addbuy(
                                       context,
                                       title.text,
                                       owner.text,
@@ -506,7 +556,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Future addFlight(
+Future addbuy(
     context,
     String title,
     String owner,
@@ -526,6 +576,36 @@ Future addFlight(
     'room_number': room_number,
     'location': location,
     'price': price
+  });
+  print(res.statusCode);
+
+  return json.decode(res.body);
+}
+
+Future addrent(
+    context,
+    String title,
+    String owner,
+    String description,
+    String image,
+    String size,
+    String room_number,
+    String location,
+    String start_date_available,
+    String end_date_available,
+    String price_per_month) async {
+  var url = 'http://localhost:3000/rents';
+  final res = await http.post(Uri.parse(url), body: {
+    'title': title,
+    'owner': owner,
+    'description': description,
+    'image': image,
+    'size': size,
+    'room_number': room_number,
+    'location': location,
+    'price_per_month': price_per_month,
+    'start_date_available': start_date_available,
+    'end_date_available': end_date_available
   });
   print(res.statusCode);
 
