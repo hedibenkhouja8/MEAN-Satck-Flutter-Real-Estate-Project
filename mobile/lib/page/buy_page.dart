@@ -91,7 +91,7 @@ class _BuyPageState extends State<BuyPage> {
             ),
             subtitle: Text("${buy.room_number} bds| ${buy.size} sqft"),
             trailing: Text(
-              "${buy.price} £",
+              "£ ${buy.price} ",
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
             ),
           ),

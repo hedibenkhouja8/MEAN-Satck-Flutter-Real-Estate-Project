@@ -13,8 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url =
-      'https://my-json-server.typicode.com/labidimalek/public-rents-api/rents';
+  final String url = 'http://localhost:3000/rents';
   List<dynamic> _rents = [];
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -493,11 +492,11 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 title: Text(
-                  rent.title,
+                  "${rent.title}",
                   style: const TextStyle(
                       fontSize: 10, fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(rent.location),
+                subtitle: Text("${rent.location}"),
               ),
             ],
           ),
