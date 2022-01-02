@@ -1,9 +1,35 @@
-<h2>Customer details</h2>
-<ul class="list-group">
-  <li class="list-group-item">
-    <strong>Name: </strong>{{ customer?.name }}
-  </li>
-  <li class="list-group-item">
-    <strong>Email: </strong>{{ customer?.email }}
-  </li>
-</ul>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-7">
+                    <div class="card p-3 py-4">
+                        <div class="text-center"> <img src="assets/images/real-estate-profile-picture-icon.jpg" width="200" class="rounded-circle"> </div>
+                        <div class="text-center mt-3">
+                            <h5 class="mt-2 mb-0">{{ customer?.name }}</h5>
+                            <div class="px-4 mt-1">
+
+                                <span>Mail  :{{ customer?.email }}</span>
+
+
+                            </div>
+                            <ul class="social-list">
+                                <li><i class="fa fa-facebook"></i></li>
+                                <li><i class="fa fa-dribbble"></i></li>
+                                <li><i class="fa fa-instagram"></i></li>
+                                <li><i class="fa fa-linkedin"></i></li>
+                                <li><i class="fa fa-google"></i></li>
+                            </ul>
+                            <div class="buttons"> <button class="btn btn-outline-primary px-4">Contact</button>  </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+  </section>
+

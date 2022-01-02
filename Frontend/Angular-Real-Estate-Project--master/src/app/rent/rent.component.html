@@ -44,7 +44,7 @@
       </div>
       <div class="modal-body">
         <div *ngIf="formValue.dirty && formValue.invalid" class="alert alert-danger alert-dismissible fade show"
-        role="alert"> 
+        role="alert">
       <p *ngIf="formValue.controls.title.errors?.required">The title is required</p>
       <p *ngIf="formValue.controls.owner.errors?.required">The owner name is required</p>
       <p *ngIf="formValue.controls.description.errors?.required">The description is required</p>
@@ -56,7 +56,7 @@
       <p *ngIf="formValue.controls.start_date_available.errors?.required">The start date available is required</p>
       <p *ngIf="formValue.controls.end_date_available.errors?.required">The end date available is required</p>
 
-    
+
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
         <form [formGroup]="formValue"(ngSubmit)="addRent()" enctype="multipart/form-data">
@@ -66,36 +66,36 @@
             [class.is-invalid]="formValue.dirty && formValue.controls.title.invalid"
           [class.is-valid]="formValue.dirty && formValue.controls.title.valid">
           </div>
-          
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
             <input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="owner" aria-describedby="emailHelp"
             [class.is-invalid]="formValue.dirty && formValue.controls.owner.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.owner.valid">
             </div>
-            
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Description</label>
             <input required type="text" class="form-control" id="exampleInputEmail1"  formControlName="description" aria-describedby="emailHelp"
             [class.is-invalid]="formValue.dirty && formValue.controls.description.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.description.valid">
             </div>
-            
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Image</label>
-            <input required type="file" 
+            <input required type="file"
             accept="image/png, image/jpeg" class="form-control" id="exampleInput1"  name ="file" formControlName="image" aria-describedby="emailHelp"
             [class.is-invalid]="formValue.dirty && formValue.controls.image.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.image.valid">
             </div>
-            
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Size</label>
             <input  required type="number" class="form-control" id="exampleInputEmail1"  formControlName="size" aria-describedby="emailHelp"
             [class.is-invalid]="formValue.dirty && formValue.controls.size.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.size.valid">
             </div>
-            
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Room Number</label>
             <input required type="number" class="form-control" id="exampleInputEmail1"  formControlName="room_number" aria-describedby="emailHelp"
@@ -108,25 +108,25 @@
             [class.is-invalid]="formValue.dirty && formValue.controls.location.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.location.valid">
             </div>
-          
+
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Price per month</label>
             <input type="number" class="form-control" id="exampleInputEmail1" formControlName="price_per_month" required
-              aria-describedby="emailHelp" 
+              aria-describedby="emailHelp"
               [class.is-invalid]="formValue.dirty && formValue.controls.price_per_month.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.price_per_month.valid"/>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
             <input type="date" class="form-control" id="exampleInputEmail1" formControlName="start_date_available" required
-              aria-describedby="emailHelp" 
+              aria-describedby="emailHelp"
               [class.is-invalid]="formValue.dirty && formValue.controls.start_date_available.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.start_date_available.valid"/>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Start date available</label>
             <input type="date" class="form-control" id="exampleInputEmail1" formControlName="end_date_available" required
-              aria-describedby="emailHelp" 
+              aria-describedby="emailHelp"
               [class.is-invalid]="formValue.dirty && formValue.controls.end_date_available.invalid"
             [class.is-valid]="formValue.dirty && formValue.controls.end_date_available.valid"/>
           </div>
@@ -195,7 +195,7 @@
 
 
             <p class="price mb-3">
-              <span class="orig-price">{{ rent.price_per_month | currency: "EUR" }}/Month</span>
+              <span class="orig-price">{{ rent.price_per_month | currency: "EUR" }}/Mo</span>
             </p>
             <p class="price mb-3">
               <span class="orig-price">{{ rent.start_date_available }} - {{ rent.end_date_available }}
