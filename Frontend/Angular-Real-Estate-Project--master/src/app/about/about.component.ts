@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Agencys } from '../about-list';
 import { Agency } from '../about.model';
 
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { LocalStorageService } from 'src/app/services/local-storage.service';
@@ -10,6 +9,7 @@ import { AboutService } from '../services/about.service';
 import { aboutmodel } from './aboutmodel.model';
 
 import { AuthService } from "src/app/services/auth.service";
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -29,16 +29,16 @@ export class AboutComponent implements OnInit {
     private formBuilder: FormBuilder,
     public router: Router
   ) {this.formValue = this.formBuilder.group({
-    owner: [''],
-    image_owner: [''],
-    mail: [''],
-    phone: [''],
-    location: [''],
-    image_location:[''],
-    siege_social: [''],
-    date_creation: [''],
-    horaire: [''],
-    description: [''],
+    owner: ['',Validators.required],
+    image_owner: ['',Validators.required],
+    mail: ['',[Validators.required,Validators.email]],
+    phone: ['',Validators.required],
+    location: ['',Validators.required],
+    image_location:['',Validators.required],
+    siege_social: ['',Validators.required],
+    date_creation: ['',Validators.required],
+    horaire: ['',Validators.required],
+    description: ['',Validators.required],
   }); 
   this.currentUser = this.localStorageService.get('user');}
 
