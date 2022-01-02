@@ -92,7 +92,7 @@ class _RentPageState extends State<RentPage> {
             ),
             subtitle: Text("${rent.room_number} bds| ${rent.size} sqft"),
             trailing: Text(
-              "${rent.price_per_month} £/ month",
+              "£${rent.price_per_month}/Mo",
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
             ),
           ),
