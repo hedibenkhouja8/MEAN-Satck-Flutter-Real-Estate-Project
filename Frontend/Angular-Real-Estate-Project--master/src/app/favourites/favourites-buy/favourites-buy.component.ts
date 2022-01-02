@@ -34,6 +34,8 @@ export class FavouritesBuyComponent implements OnInit {
       this.favContent[index].image = buy.image;
       this.favContent[index].price = buy.price;
       this.favContent[index].owner = buy.owner;
+      
+      this.favContent[index].description = buy.description;
 
 }
   }

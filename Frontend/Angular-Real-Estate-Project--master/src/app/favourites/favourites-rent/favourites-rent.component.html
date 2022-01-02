@@ -13,28 +13,23 @@
 
          </div>
          <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded" *ngFor="let fav of favContent;index as i">
-             <div class="d-flex flex-row"><img class="rounded" src={{fav.image}} width="250">
-             <br>
-             </div>
-             <div class="favowner">
-               <h6  > <i class="bi bi-person"></i>{{ fav.owner}}  </h6>
-
-             </div>
-             <h5 class="card-title" id="ti"><span  >{{ fav.title }}</span> </h5>
-             <div class="d-flex flex-row">
-
-             <div class="favlocation">
-               <h6  > <i class="bi bi-geo-alt"></i>{{ fav.location}}  </h6>
-
-             </div>
-
-
-               </div>
-
-
-
-
-         </div>
+          <div class="card mb-3" style="max-width: 1500px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{fav.image}}" class="card-img" alt="..." width="300px" height="227px">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{fav.title}}</h5>
+                  <p class="card-text">{{fav.description}}</p>
+                  <h6  > <i class="bi bi-geo-alt"></i>{{ fav.location}}  
+                   <i class="bi bi-person"></i>{{ fav.owner}}  </h6> 
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
 
      </div>
   </div>

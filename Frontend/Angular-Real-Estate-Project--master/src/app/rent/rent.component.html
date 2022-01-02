@@ -26,7 +26,7 @@
 <ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
 
                                   <li class="nav-item">
-                                    <a class="nav-link active btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true" style="margin-left: 30cm;">Add House</a>
+                                    <a class="nav-link active btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" *ngIf="currentUser.name != null "  aria-expanded="true" style="margin-left: 30cm;">Add House</a>
                                   </li>
 
                                 </ul>
@@ -188,7 +188,7 @@
           </div>
 
           <div class="text">
-            <button type="button" (click)="addTofav(rent.id)" title="Add To Fav" id="heart"
+            <button type="button" (click)="addTofav(rent.id)" *ngIf="currentUser.name != null && currentUser.id !='61cffe10c47ebf92aa986145'"   title="Add To Fav" id="heart"
               class="btn btn-sm btn-outline-secondary">
               <i id="like" class="bi bi-heart"></i>
             </button>
@@ -211,7 +211,7 @@
               </li>
               <li><i class="bi bi-building"></i>{{ rent.size }}sqft</li>
             </ul>
-            <button type="button" (click)="onEditRent(rent)"  title="update rent" id="update"  data-bs-toggle="modal" data-bs-target="#modalUpdate"
+            <button type="button" (click)="onEditRent(rent)" *ngIf="currentUser.id == '61cffe10c47ebf92aa986145' "   title="update rent" id="update"  data-bs-toggle="modal" data-bs-target="#modalUpdate"
             class="btn btn-sm btn-outline-secondary">
             <i class="bi bi-pencil-square"></i>
           </button>
@@ -296,7 +296,7 @@ aria-hidden="true">
   </div>
 </div>
 </div>
-            <button type="button" (click)=" deleteRent(rent)" title="delete rent" id="delete"
+            <button type="button" (click)=" deleteRent(rent)"*ngIf="currentUser.id == '61cffe10c47ebf92aa986145' "  title="delete rent" id="delete"
             class="btn btn-sm btn-outline-secondary">
             <i class="bi bi-trash"></i>
           </button>

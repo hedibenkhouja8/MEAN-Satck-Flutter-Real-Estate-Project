@@ -5,8 +5,12 @@ import { Agency } from '../about.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { AboutService } from '../services/about.service';
 import { aboutmodel } from './aboutmodel.model';
+
+import { AuthService } from "src/app/services/auth.service";
+
 
 @Component({
   selector: 'app-about',
@@ -16,9 +20,11 @@ import { aboutmodel } from './aboutmodel.model';
 export class AboutComponent implements OnInit {
 
    public agencyList: any =[];
+   currentUser: any;
    public formValue: FormGroup;
    aboutmodel: aboutmodel = new aboutmodel();
-  constructor(
+  constructor( private localStorageService: LocalStorageService,
+    public authService: AuthService,
     private aboutService: AboutService,
     private formBuilder: FormBuilder,
     public router: Router
@@ -33,7 +39,8 @@ export class AboutComponent implements OnInit {
     date_creation: [''],
     horaire: [''],
     description: [''],
-  }); }
+  }); 
+  this.currentUser = this.localStorageService.get('user');}
 
   ngOnInit(): void {
     this.getAllAbouts();

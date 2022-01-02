@@ -8,6 +8,9 @@ import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { buymodel } from './buymodel.model';
 
+import { AuthService } from "src/app/services/auth.service";
+
+
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -19,7 +22,10 @@ export class BuyComponent implements OnInit {
   public formValue: FormGroup;
   
 buymodel: buymodel = new buymodel();
-  constructor(private favService: FavService,private formBuilder:FormBuilder,    private buyService: BuyService ,public router:Router) {
+currentUser: any;
+  constructor(private favService: FavService,private formBuilder:FormBuilder,  
+    private localStorageService: LocalStorageService,
+    public authService: AuthService,  private buyService: BuyService ,public router:Router) {
     this.formValue = this.formBuilder.group({
       title: ['',Validators.required],
       owner: ['',Validators.required],
@@ -31,15 +37,12 @@ buymodel: buymodel = new buymodel();
       price: ['',Validators.required]
 
     });
+    this.currentUser = this.localStorageService.get('user');
    }
 
   ngOnInit(): void {
     
-    this.buyService.alla().subscribe(
-      res => this.buyList = res
-    );
-    console.log(this.buyList);
-    console.log(this.formValue);
+   this.getAllBuys();
   }
   public addTofav(id: string):void {
     this.favService.add(id);

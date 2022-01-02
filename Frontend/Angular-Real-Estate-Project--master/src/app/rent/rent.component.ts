@@ -7,6 +7,8 @@ import { FavRentService } from 'src/app/services/fav-rent.service';
 import { RentService } from '../services/rent.service';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 
+import { AuthService } from "src/app/services/auth.service";
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-rent',
@@ -16,12 +18,15 @@ import { Router } from '@angular/router';
 export class RentComponent implements OnInit {
   public rentList: any = [];
   public favContent: any[] = [];
+  currentUser: any;
   public formValue: FormGroup;
   rentmodel: rentmodel = new rentmodel();
-  constructor(
+  constructor( private localStorageService: LocalStorageService,
+    public authService: AuthService,
     private favService: FavRentService,
     private rentService: RentService,
     private formBuilder: FormBuilder,
+    
     public router: Router
   ) {
     this.formValue = this.formBuilder.group({
@@ -36,6 +41,7 @@ export class RentComponent implements OnInit {
       start_date_available: ['',Validators.required],
       end_date_available: ['',Validators.required],
     });
+    this.currentUser = this.localStorageService.get('user');
   }
 
   ngOnInit(): void {

@@ -55,7 +55,7 @@
             ><i class="bi bi-house-fill"></i> Rent</a
           >
         </li>
-        <li class="nav-item" routerLinkActive="active">
+        <li *ngIf="currentUser.name != null && currentUser.id !='61cffe10c47ebf92aa986145'" class="nav-item" routerLinkActive="active">
           <a href="#" routerLink="/favourites" class="nav-link"
             ><i class="bi bi-suit-heart-fill"></i> Favourites</a
           >
@@ -75,14 +75,14 @@
             ><i class="bi bi-pen"></i> Contact</a
           >
         </li>
-        <li class="nav-item" routerLinkActive="active">
+        <li *ngIf="currentUser.id == null " class="nav-item" routerLinkActive="active">
           <a href="#" routerLink="/auth/login" class="nav-link"
             ><i class="bi bi-door-open"></i> Login</a
           >
         </li>
         <li class="nav-item" routerLinkActive="active">
           <a 
-          *ngIf="currentUser"
+          *ngIf="currentUser.id != null"
             class="nav-link text-decoration-none text-light dropdown-toggle"
             href="#"
             id="dropdown03"
@@ -90,7 +90,7 @@
             aria-expanded="false"
             style="color: black!important;"
             >{{currentUser.name}}</a>
-          <ul class="dropdown-menu" aria-labelledby="dropdown03" style="margin-left: 87%;margin-top: -11px;">
+          <ul *ngIf="currentUser.name != null" class="dropdown-menu" aria-labelledby="dropdown03" style="margin-left: 87%;margin-top: -11px;">
             <li>
               <a class="dropdown-item" [routerLink]="'/customer/profile/'+currentUser.id"
                 ><i class="bi bi-person-fill"></i> Profile</a

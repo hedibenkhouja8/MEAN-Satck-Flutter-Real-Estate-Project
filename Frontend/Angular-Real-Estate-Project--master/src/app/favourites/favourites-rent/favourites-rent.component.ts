@@ -27,6 +27,7 @@ export class FavouritesRentComponent implements OnInit {
       this.favContent[index].location = rent.location;
       this.favContent[index].image = rent.image;
       this.favContent[index].owner = rent.owner;
+      this.favContent[index].description = rent.description;
     }
   }
 

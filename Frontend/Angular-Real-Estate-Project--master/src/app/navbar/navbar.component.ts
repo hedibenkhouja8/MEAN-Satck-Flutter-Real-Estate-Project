@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FavService } from "src/app/services/fav.service";
+
+import { FavRentService } from 'src/app/services/fav-rent.service';
 import { LocalStorageService } from "src/app/services/local-storage.service";
 import { AuthService } from "src/app/services/auth.service";
 
@@ -10,7 +13,7 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class NavbarComponent implements OnInit {
   currentUser: any;
-  constructor(
+  constructor(private favService: FavService,private favrentService: FavRentService,
     private localStorageService: LocalStorageService,
     public authService: AuthService
   ) {
@@ -22,11 +25,18 @@ ngOnInit(): void {
     this.authService.logout();
     this.ngOnInit();
     this.reloadPage();
+    
+    this.favService.clear();
+    
+    this.favrentService.clear();
   }
   reloadPage() {
     setTimeout(()=>{
       window.location.reload();
     }, 1);
   }
-  
+  clearFavourites() {
+    this.favService.clear();
+    this.ngOnInit();
+  }
 }
