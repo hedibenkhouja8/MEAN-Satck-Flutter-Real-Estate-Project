@@ -176,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     const Padding(
                       padding: EdgeInsets.fromLTRB(0, 70, 0, 0),
                       child: Text(
-                        "Already have an account?",
+                        "Already have an account? ",
                         style: TextStyle(
                             fontSize: 17,
                             color: Colors.white,
