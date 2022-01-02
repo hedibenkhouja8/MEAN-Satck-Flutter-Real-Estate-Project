@@ -4,9 +4,10 @@ import { Buy } from '../buy.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { FavService } from 'src/app/services/fav.service';
 import { BuyService } from '../services/buy.service';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { buymodel } from './buymodel.model';
+
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
@@ -20,14 +21,14 @@ export class BuyComponent implements OnInit {
 buymodel: buymodel = new buymodel();
   constructor(private favService: FavService,private formBuilder:FormBuilder,    private buyService: BuyService ,public router:Router) {
     this.formValue = this.formBuilder.group({
-      title: [''],
-      owner: [''],
-      description: [''],
-      image: [''],
-      size: [''],
-      room_number: [''],
-      location: [''],
-      price: ['']
+      title: ['',Validators.required],
+      owner: ['',Validators.required],
+      description: ['',Validators.required],
+      image: ['',Validators.required],
+      size: ['',Validators.required],
+      room_number: ['',Validators.required],
+      location: ['',Validators.required],
+      price: ['',Validators.required]
 
     });
    }
@@ -38,6 +39,7 @@ buymodel: buymodel = new buymodel();
       res => this.buyList = res
     );
     console.log(this.buyList);
+    console.log(this.formValue);
   }
   public addTofav(id: string):void {
     this.favService.add(id);
