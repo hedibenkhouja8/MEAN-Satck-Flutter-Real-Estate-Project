@@ -1,14 +1,13 @@
-
-class Rent{
+class Rent {
   final String id;
   final String title;
   final String owner;
   final String description;
   final String image;
-  final int size;
-  final int room_number;
+  final String size;
+  final String room_number;
   final String location;
-  final num price_per_month;
+  final String price_per_month;
   final String start_date_available;
   final String end_date_available;
 
@@ -37,8 +36,6 @@ class Rent{
         location: json['location'],
         price_per_month: json['price_per_month'],
         start_date_available: json['start_date_available'],
-        end_date_available: json['end_date_available']
-    );
+        end_date_available: json['end_date_available']);
   }
-
 }
