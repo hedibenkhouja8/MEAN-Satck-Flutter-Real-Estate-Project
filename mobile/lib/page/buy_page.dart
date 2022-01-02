@@ -5,14 +5,15 @@ import 'package:mobile/page/buy_detail.dart';
 import 'package:mobile/utils/buy_list.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
 class BuyPage extends StatefulWidget {
-    const BuyPage({Key? key}) : super(key: key);
+  const BuyPage({Key? key}) : super(key: key);
   @override
   _BuyPageState createState() => _BuyPageState();
 }
-class _BuyPageState extends State<BuyPage>  {
-  final String url =
-     'http://localhost:3000/buys';
+
+class _BuyPageState extends State<BuyPage> {
+  final String url = 'http://localhost:3000/buys';
   List<dynamic> _buys = [];
   bool loading = true;
 
@@ -37,8 +38,8 @@ class _BuyPageState extends State<BuyPage>  {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    //drawer: NavigationDrawerWidget(),
-         //drawer: NavigationDrawerWidget(),
+      //drawer: NavigationDrawerWidget(),
+      //drawer: NavigationDrawerWidget(),
 
       body: loading ? waitingScreen() : buysList());
 
@@ -57,7 +58,6 @@ class _BuyPageState extends State<BuyPage>  {
 
   Widget buysList() {
     return ListView.builder(
-
         itemCount: _buys.length,
         itemBuilder: (context, index) {
           Buy buy = _buys[index];
@@ -68,10 +68,9 @@ class _BuyPageState extends State<BuyPage>  {
               children: <Widget>[cardBuild(buy)],
             ),
           );
+        });
+  }
 
-        } );
-  
-}
   Widget cardBuild(Buy buy) {
     return Card(
       shape: const RoundedRectangleBorder(
@@ -97,21 +96,21 @@ class _BuyPageState extends State<BuyPage>  {
             ),
           ),
           ButtonTheme(
-            // make buttons use the appropriate styles for cards
+              // make buttons use the appropriate styles for cards
               child: ButtonBar(children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => BuyDetail(
+            FlatButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => BuyDetail(
                           buy: buy,
                         )));
-                  },
-                  child: const Text(
-                    "more Details",
-                    style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
-                  ),
-                )
-              ]))
+              },
+              child: const Text(
+                "more Details",
+                style: TextStyle(color: Color.fromRGBO(212, 202, 104, 1)),
+              ),
+            )
+          ]))
         ],
       ),
     );

@@ -13,9 +13,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String url =
-      'http://localhost:3000/rents';
+  final String url = 'http://localhost:3000/rents';
   List<dynamic> _rents = [];
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController title = TextEditingController();
+  final TextEditingController owner = TextEditingController();
+  final TextEditingController description = TextEditingController();
+  final TextEditingController location = TextEditingController();
+  final TextEditingController image = TextEditingController();
+  final TextEditingController size = TextEditingController();
+  final TextEditingController room_number = TextEditingController();
+  final TextEditingController price = TextEditingController();
 
   get itemCount => null;
   bool circular = false;
@@ -105,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -117,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -129,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -141,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -153,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -165,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             border: OutlineInputBorder(
@@ -177,7 +186,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             suffixIcon: const Icon(
@@ -194,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           0, 0, 0, 10),
-                                      child: TextField(
+                                      child: TextFormField(
                                         decoration: InputDecoration(
                                             filled: true,
                                             suffixIcon: const Icon(
@@ -225,9 +234,7 @@ class _HomePageState extends State<HomePage> {
                                     primary:
                                         const Color.fromRGBO(212, 202, 104, 1),
                                   ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
+                                  onPressed: () {},
                                   child: const Text("Add"),
                                 ),
                               )
@@ -306,85 +313,92 @@ class _HomePageState extends State<HomePage> {
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Title'),
+                                      controller: title,
                                       keyboardType: TextInputType.text,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter owner'),
+                                      controller: owner,
                                       keyboardType: TextInputType.text,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Description'),
+                                      controller: description,
                                       keyboardType: TextInputType.text,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Size'),
+                                      controller: size,
                                       keyboardType: TextInputType.number,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Room Number'),
+                                      controller: room_number,
                                       keyboardType: TextInputType.number,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Location'),
+                                      controller: location,
                                       keyboardType: TextInputType.text,
                                     )),
                                 Padding(
                                     padding:
                                         const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                    child: TextField(
+                                    child: TextFormField(
                                       decoration: InputDecoration(
                                           filled: true,
                                           border: OutlineInputBorder(
                                               borderRadius:
                                                   BorderRadius.circular(50)),
                                           hintText: 'Enter Price'),
+                                      controller: price,
                                       keyboardType: TextInputType.number,
                                     )),
                                 const Divider(
@@ -405,7 +419,16 @@ class _HomePageState extends State<HomePage> {
                                       const Color.fromRGBO(212, 202, 104, 1),
                                 ),
                                 onPressed: () {
-                                  Navigator.of(context).pop();
+                                  addFlight(
+                                      context,
+                                      title.text,
+                                      owner.text,
+                                      description.text,
+                                      'images/rent-1.jpg',
+                                      size.text,
+                                      room_number.text,
+                                      location.text,
+                                      price.text);
                                 },
                                 child: const Text("Add"),
                               ),
@@ -481,4 +504,30 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Future addFlight(
+    context,
+    String title,
+    String owner,
+    String description,
+    String image,
+    String size,
+    String room_number,
+    String location,
+    String price) async {
+  var url = 'http://localhost:3000/buys';
+  final res = await http.post(Uri.parse(url), body: {
+    'title': title,
+    'owner': owner,
+    'description': description,
+    'image': image,
+    'size': size,
+    'room_number': room_number,
+    'location': location,
+    'price': price
+  });
+  print(res.statusCode);
+
+  return json.decode(res.body);
 }
