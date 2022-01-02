@@ -9,6 +9,8 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   bool _isObscure = true;
+  final email = TextEditingController();
+  final mdp = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +57,7 @@ class _SignInPageState extends State<SignInPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                     child: TextField(
+                      controller: email,
                       decoration: InputDecoration(
                           fillColor: const Color.fromRGBO(211, 211, 211, 1),
                           filled: true,
@@ -75,6 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                     child: Text('Password '),
                   ),
                   TextField(
+                    controller: mdp,
                     decoration: InputDecoration(
                         fillColor: const Color.fromRGBO(211, 211, 211, 1),
                         filled: true,
@@ -109,7 +113,23 @@ class _SignInPageState extends State<SignInPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0)),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/home');
+                            if (email.text == '' || mdp.text == '') {
+                              var snackBar = const SnackBar(
+                                content: Text(
+                                    'please enter your email and password !'),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else if (email.text != 'melek123@gmail.com' ||
+                                mdp.text != 'melek123') {
+                              var snackBar = const SnackBar(
+                                content: Text('incorrect email or password!'),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else {
+                              Navigator.pushNamed(context, '/home');
+                            }
                           })),
                 ],
               ),
@@ -120,7 +140,7 @@ class _SignInPageState extends State<SignInPage> {
                     const Padding(
                       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Text(
-                        "Already have an account?",
+                        "Don't have an account?",
                         style: TextStyle(
                             fontSize: 13,
                             color: Colors.black,
@@ -129,7 +149,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     FlatButton(
                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(

@@ -9,6 +9,9 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool _isObscure = true;
+  final email = TextEditingController();
+  final pwd = TextEditingController();
+  final user = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                     child: TextField(
+                      controller: user,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50)),
@@ -73,11 +77,12 @@ class _SignUpPageState extends State<SignUpPage> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-                    child: Text('Email '),
+                    child: Text('Email'),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                     child: TextField(
+                      controller: email,
                       decoration: InputDecoration(
                           fillColor: const Color.fromRGBO(211, 211, 211, 1),
                           filled: true,
@@ -98,6 +103,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: Text('Password '),
                   ),
                   TextField(
+                    controller: pwd,
                     decoration: InputDecoration(
                         fillColor: const Color.fromRGBO(211, 211, 211, 1),
                         filled: true,
@@ -125,13 +131,37 @@ class _SignUpPageState extends State<SignUpPage> {
                   Padding(
                       padding: const EdgeInsets.fromLTRB(0, 20, 0, 10),
                       child: RaisedButton(
-                          color:  const Color.fromRGBO(45, 114, 178, 1),
+                          color: const Color.fromRGBO(45, 114, 178, 1),
                           textColor: Colors.white,
                           child: const Text("Sign Up Now"),
                           padding: const EdgeInsets.fromLTRB(120, 20, 120, 20),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0)),
-                          onPressed: null)),
+                          onPressed: () {
+                            bool isValidEmail() {
+                              return RegExp(
+                                      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                                  .hasMatch(email.text);
+                            }
+
+                            if (user.text == '' ||
+                                pwd.text == '' ||
+                                email.text == '') {
+                              var snackBar = const SnackBar(
+                                content: Text('You must fill all the fields !'),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else if (!isValidEmail()) {
+                              var snackBar = const SnackBar(
+                                content: Text('incorrect email format !'),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
+                            } else {
+                              Navigator.pushNamed(context, '/signin');
+                            }
+                          })),
                 ],
               ),
               Row(
