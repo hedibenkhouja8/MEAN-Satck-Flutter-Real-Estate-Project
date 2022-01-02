@@ -10,7 +10,7 @@ import { AuthService } from "src/app/services/auth.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+public a : any;
   public loginForm: FormGroup;
 
   constructor(
@@ -25,15 +25,20 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.a=2;
   }
 
   loginUser() {
     this.authService.login(this.loginForm.value)
-    
+    if (this.loginForm.invalid) {
+     this.a=1;
+     console.log(this.a);
+    }
   }
   reloadPage() {
     setTimeout(()=>{
       window.location.reload();
     }, 1);
   }
+  
 }
