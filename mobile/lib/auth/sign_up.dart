@@ -225,6 +225,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                   phone.text,
                                   'images/user.png',
                                   location.text);
+                              var snackBar = const SnackBar(
+                                content: Text('user added successfully'),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
                               Navigator.pushNamed(context, '/signin');
                             }
                           })),
