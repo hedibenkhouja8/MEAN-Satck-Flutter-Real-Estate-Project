@@ -1,19 +1,6 @@
 {
   "rents": [
     {
-      "id": "1",
-      "title": "London house",
-      "owner": "malek",
-      "description": "This beautiful, spacious and bright 3 Bedroom and 2 Bathroom house for rent is located at 1366 Bizerte Street, Bizerte, LA. With an open floor plan and spacious kitchen, you'll find it difficult to find a nicer home at this price! The living room features a large window and a fireplace perfect for those chilly winter evenings. The master bedroom is spacious with bath, walk-in closet and television hook-up. The master bathroom has dual sinks and a separate toilet area as well as a large shower with bench and plenty of storage. There is also a half bath on the first floor. This home includes an attached carport and an extra deep driveway for parking extra vehicles. Contact us now to book a viewing!",
-      "image": "images/rent-1.jpg",
-      "size": "100",
-      "room_number": "5",
-      "location": "bizerte",
-      "price_per_month": "100.99",
-      "start_date_available": "21/10/2021",
-      "end_date_available": "21/12/2021"
-    },
-    {
       "id": "2",
       "title": "villa holiday",
       "owner": "malek",
