@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter/cupertino.dart';
+import 'dart:convert';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -9,10 +12,13 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool _isObscure = true;
-  final email = TextEditingController();
-  final pwd = TextEditingController();
-  final user = TextEditingController();
 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController name = TextEditingController();
+  final TextEditingController mail = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final TextEditingController phone = TextEditingController();
+  final TextEditingController location = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
@@ -58,7 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                     child: TextField(
-                      controller: user,
+                      controller: name,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50)),
@@ -82,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                     child: TextField(
-                      controller: email,
+                      controller: mail,
                       decoration: InputDecoration(
                           fillColor: const Color.fromRGBO(211, 211, 211, 1),
                           filled: true,
@@ -103,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: Text('Password '),
                   ),
                   TextField(
-                    controller: pwd,
+                    controller: password,
                     decoration: InputDecoration(
                         fillColor: const Color.fromRGBO(211, 211, 211, 1),
                         filled: true,
@@ -124,6 +130,52 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ],
               ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                    child: Text('phone'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                    child: TextField(
+                      controller: phone,
+                      decoration: InputDecoration(
+                          fillColor: const Color.fromRGBO(211, 211, 211, 1),
+                          filled: true,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50)),
+                          hintText: 'Enter phone'),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                    child: Text('Location'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
+                    child: TextField(
+                      controller: location,
+                      decoration: InputDecoration(
+                          fillColor: const Color.fromRGBO(211, 211, 211, 1),
+                          filled: true,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50)),
+                          hintText: 'Enter location'),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                  )
+                ],
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -138,27 +190,41 @@ class _SignUpPageState extends State<SignUpPage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50.0)),
                           onPressed: () {
+                            bool test = true;
                             bool isValidEmail() {
                               return RegExp(
                                       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-                                  .hasMatch(email.text);
+                                  .hasMatch(mail.text);
                             }
 
-                            if (user.text == '' ||
-                                pwd.text == '' ||
-                                email.text == '') {
+                            if (mail.text == '' ||
+                                name.text == '' ||
+                                phone.text == '' ||
+                                location.text == '' ||
+                                password.text == '') {
                               var snackBar = const SnackBar(
                                 content: Text('You must fill all the fields !'),
                               );
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(snackBar);
+                              test = false;
                             } else if (!isValidEmail()) {
                               var snackBar = const SnackBar(
                                 content: Text('incorrect email format !'),
                               );
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(snackBar);
-                            } else {
+                              test = false;
+                            }
+                            if (test == true) {
+                              register(
+                                  context,
+                                  name.text,
+                                  mail.text,
+                                  password.text,
+                                  phone.text,
+                                  'images/user.png',
+                                  location.text);
                               Navigator.pushNamed(context, '/signin');
                             }
                           })),
@@ -195,4 +261,20 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     ));
   }
+}
+
+Future register(context, String name, String mail, String password,
+    String phone, String image, String location) async {
+  var url = 'http://localhost:3000/agents';
+  final res = await http.post(Uri.parse(url), body: {
+    'name': name,
+    'mail': mail,
+    'password': password,
+    'phone': phone,
+    'image': image,
+    'location': location
+  });
+  print(res.statusCode);
+
+  return json.decode(res.body);
 }

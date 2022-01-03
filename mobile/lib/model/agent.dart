@@ -1,4 +1,4 @@
-class Agent{
+class Agent {
   final String id;
   final String name;
   final String mail;
@@ -16,13 +16,12 @@ class Agent{
   });
   factory Agent.fromJson(Map<String, dynamic> json) {
     return Agent(
-        id: json['id'],
-        name: json['name'],
-        mail: json['mail'],
-        phone: json['phone'],
-        image: json['image'],
-        location: json['location'],
+      id: json['id'],
+      name: json['name'],
+      mail: json['mail'],
+      phone: json['phone'],
+      image: json['image'],
+      location: json['location'],
     );
   }
-
 }
