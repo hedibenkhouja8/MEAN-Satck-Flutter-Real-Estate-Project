@@ -211,28 +211,6 @@
   ],
   "buys": [
     {
-      "id": "1",
-      "title": "Casa Vacaciolo",
-      "owner": "malek",
-      "description": "House for sale! 115 year old house located on Waterloo. This quaint and cozy home has 4 bedrooms and 5 bathrooms. It also has 400 sqft of living space. The house also has a back porch, a fireplace in the living room, as well as a built in shelving unit in the living room. The listing agent is available anytime to set up showings.",
-      "image": "images/rent-1.jpg",
-      "size": "100",
-      "room_number": "5",
-      "location": "bizerte",
-      "price": "100.99"
-    },
-    {
-      "id": "2",
-      "title": "Villa d'Espagne",
-      "owner": "malek",
-      "description": "House for sale! 115 year old house located on Waterloo. This quaint and cozy home has 4 bedrooms and 5 bathrooms. It also has 400 sqft of living space. The house also has a back porch, a fireplace in the living room, as well as a built in shelving unit in the living room. The listing agent is available anytime to set up showings.",
-      "image": "images/rent-2.jpg",
-      "size": "100",
-      "room_number": "5",
-      "location": "bizerte",
-      "price": "100.99"
-    },
-    {
       "id": "3",
       "title": "Luxury Housetel",
       "owner": "malek",
@@ -277,17 +255,6 @@
       "price": "100.99"
     },
     {
-      "id": "7",
-      "title": "fff",
-      "owner": "ddd",
-      "description": "ddd",
-      "image": "images/rent-1.jpg",
-      "size": "123",
-      "room_number": "123",
-      "location": "13",
-      "price": "13"
-    },
-    {
       "title": "oussama",
       "owner": "oussama",
       "description": "sss",
@@ -297,17 +264,6 @@
       "location": "123",
       "price": "132",
       "id": "7qgVV5k"
-    },
-    {
-      "title": "dc",
-      "owner": "dcd",
-      "description": "dcd",
-      "image": "images/rent-1.jpg",
-      "size": "dcdc",
-      "room_number": "dcd",
-      "location": "cdcd",
-      "price": "dccd",
-      "id": "6WgpmLC"
     },
     {
       "title": "ee",
@@ -479,6 +435,15 @@
       "image": "images/user.png",
       "location": "ssaza",
       "id": "vfleEc3"
+    },
+    {
+      "name": "dd",
+      "mail": "dddd@ddd.com",
+      "password": "ddd",
+      "phone": "dd",
+      "image": "images/user.png",
+      "location": "ddd",
+      "id": "A6pCOW4"
     }
   ]
 }

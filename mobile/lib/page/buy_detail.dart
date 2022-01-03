@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter/cupertino.dart';
+import 'dart:convert';
 
 class BuyDetail extends StatelessWidget {
   final buy;
 
-  BuyDetail(
-      {required this.buy,
-      });
+  BuyDetail({
+    required this.buy,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +45,9 @@ class BuyDetail extends StatelessWidget {
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(10.0),
               topRight: Radius.circular(8.0),
-            ), child :Image.asset(buy.image,
-            height: 150.0, width: 100.0, fit: BoxFit.contain)),
+            ),
+            child: Image.asset(buy.image,
+                height: 150.0, width: 100.0, fit: BoxFit.contain)),
         SizedBox(height: 20.0),
         Center(
           child: Text("${buy.price}£",
@@ -69,7 +73,6 @@ class BuyDetail extends StatelessWidget {
                   fontFamily: 'Varela',
                   fontSize: 20.0)),
         ),
-
         SizedBox(height: 20.0),
         Center(
           child: Container(
@@ -82,7 +85,29 @@ class BuyDetail extends StatelessWidget {
                     color: Color(0xFFB4B8B9))),
           ),
         ),
+        FlatButton(
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: const Text(
+              'Delete',
+              style: TextStyle(
+                  fontSize: 13,
+                  color: Color.fromRGBO(800, 114, 178, 1),
+                  fontWeight: FontWeight.normal),
+            ),
+            onPressed: () {
+              delete(buy.id);
+              Navigator.pushNamed(context, '/');
+            })
       ]),
     );
+  }
+
+  Future delete(String id) async {
+    String url = 'http://localhost:3000/buys/$id';
+    final deleteurl = (Uri.parse(url));
+    final response = await http.delete(deleteurl);
+    print(response.statusCode);
+    print(response.body);
+    return json.decode(response.body);
   }
 }
