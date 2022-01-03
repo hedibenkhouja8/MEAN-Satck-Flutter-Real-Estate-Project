@@ -265,7 +265,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
 Future register(context, String name, String mail, String password,
     String phone, String image, String location) async {
-  var url = 'http://localhost:3000/agents';
+  var url = 'http://localhost:3000/users';
   final res = await http.post(Uri.parse(url), body: {
     'name': name,
     'mail': mail,
