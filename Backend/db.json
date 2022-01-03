@@ -79,19 +79,6 @@
       "end_date_available": "21/09/2021"
     },
     {
-      "title": "ff",
-      "owner": "g",
-      "description": "g",
-      "image": "g",
-      "size": "g",
-      "room_number": "g",
-      "location": "g",
-      "price_per_month": "g",
-      "start_date_available": "gg",
-      "end_date_available": "gg",
-      "id": "Vc7W53U"
-    },
-    {
       "title": "dd",
       "owner": "dd",
       "description": "dd",
@@ -341,7 +328,9 @@
       "phone": "+21621436587",
       "image": "images/melek.jpg",
       "location": "bizerte"
-    },
+    }
+  ],
+  "users": [
     {
       "name": "sss",
       "mail": "ssss@sss.com",
@@ -431,6 +420,24 @@
       "image": "images/user.png",
       "location": "ddd",
       "id": "A6pCOW4"
+    },
+    {
+      "name": "htyhth",
+      "mail": "fhfh@gmail.com",
+      "password": "gfhf",
+      "phone": "1253668",
+      "image": "images/user.png",
+      "location": "bgbgfhf",
+      "id": "DnLYi_l"
+    },
+    {
+      "name": "dthfgh",
+      "mail": "melrlrf@gmail.com",
+      "password": "125636655",
+      "phone": "1255526",
+      "image": "images/user.png",
+      "location": "dfgfdg",
+      "id": "Qiehlmq"
     }
   ]
 }
